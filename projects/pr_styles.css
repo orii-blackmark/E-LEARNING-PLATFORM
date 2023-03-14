@@ -1,0 +1,111 @@
+#projects {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    margin: 20px 0;
+  }
+  
+  /* Style each project article */
+  article {
+    background-color: #f2f2f2;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.3);
+    margin: 20px;
+    width: 300px;
+  }
+  
+  /* Style the project image */
+  article img {
+    display: block;
+    height: 200px;
+    margin: 0 auto;
+    width: 300px;
+  }
+  
+  /* Style the project title */
+  article h2 {
+    font-size: 1.5em;
+    margin: 10px;
+    text-align: center;
+  }
+  
+  /* Style the project description */
+  article p {
+    font-size: 1.2em;
+    margin: 10px;
+    text-align: justify;
+  }
+
+  /* PROJECT 1 STYLE*/
+
+  /* Style the header */
+header {
+    background-color: #333;
+    color: #fff;
+    padding: 20px;
+    text-align: center;
+  }
+  
+  /* Style the page title */
+  h1 {
+    margin: 0;
+  }
+  
+  /* Style the project article */
+  article {
+    background-color: #f2f2f2;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.3);
+    margin: 20px auto;
+    max-width: 800px;
+    padding: 20px;
+  }
+  
+  /* Style the project image */
+  article img {
+    display: block;
+    height: 400px;
+    margin: 0 auto;
+    width: 800px;
+  }
+  
+  /* Style the project title */
+  article h2 {
+    font-size: 2.5em;
+    margin: 20px 0 10px;
+    text-align: center;
+  }
+  
+  /* Style the project description */
+  article p {
+    font-size: 1.5em;
+    margin: 10px 0;
+    text-align: justify;
+  }
+  
+  /* Style the project links */
+  article ul {
+    display: flex;
+    justify-content: center;
+    list-style: none;
+    margin: 20px 0;
+    padding: 0;
+  }
+  
+  article li {
+    margin: 0 10px;
+  }
+  
+  article li a {
+    background-color: #333;
+    border-radius: 5px;
+    color: #fff;
+    font-size: 1.5em;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+  }
+  
+  article li a:hover {
+    background-color: #666;
+  }
