@@ -15,6 +15,19 @@ body{
     width: 100%;
     box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
 }
+
+/* Style the link */
+a {
+color: #2d545e;   
+text-decoration: none; 
+border-bottom: 2px solid #2d545e; 
+transition: all 0.3s ease;  
+}
+
+a:hover {
+color: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
+border-bottom: 2px solid #2d545e; 
+}
 .menu .logo{
 
     height: 100%;
@@ -662,9 +675,3 @@ body{
         font-weight: 400;
         text-transform: capitalize;
 }
-
-
-
-
-
-/*DASHBOARD STYLE*/
