@@ -1,41 +1,93 @@
 <!DOCTYPE html>
 <html>
-<head>
-	<title>E-Learning Platform - Services</title>
-	<link rel="stylesheet" type="text/css" href="services.css">
-</head>
-<body>
-	<header>
-		<h1>E-Learning Platform</h1>
-		<nav>
-			<ul>
-				<li><a href="index.html">Home</a></li>
-				<li><a href="courses.html">Courses</a></li>
-				<li class="current"><a href="services.html">Services</a></li>
-				<li><a href="about.html">About</a></li>
-			</ul>
-		</nav>
-	</header>
-	<main>
-		<h2>Our Services</h2>
-		<p>We offer a range of services to help you succeed in your e-learning journey:</p>
-		<ul>
-			<li><a href="#online-tutoring">Online Tutoring</a></li>
-			<li><a href="#course-reviews">Course Reviews</a></li>
-			<li><a href="#study-groups">Study Groups</a></li>
-		</ul>
-		<section id="online-tutoring">
-			<h3>Online Tutoring</h3>
-			<p>Our experienced tutors are available to provide one-on-one online tutoring sessions for a variety of subjects. Whether you need help with math, science, or language arts, we've got you covered.</p>
-		</section>
-		<section id="course-reviews">
-			<h3>Course Reviews</h3>
-			<p>Our team of experts has reviewed hundreds of online courses to help you find the right one for your needs. We provide unbiased reviews and ratings based on factors such as course content, instructor quality, and value for money.</p>
-		</section>
-		<section id="study-groups">
-			<h3>Study Groups</h3>
-			<p>Join one of our online study groups to collaborate and learn with like-minded individuals. Our study groups are led by experienced moderators and cover a range of subjects.</p>
-		</section>
-	</main>
-</body>
+  <head>
+    <title>E-Learning Platform - Services</title>
+    <style>
+      /* CSS styles go here */
+      body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+      }
+      
+      header {
+        background-color: #0077c2;
+        color: white;
+        padding: 20px;
+        text-align: center;
+      }
+      
+      nav {
+        background-color: #f2f2f2;
+        border-bottom: 1px solid #ddd;
+        display: flex;
+        justify-content: space-between;
+        padding: 10px;
+      }
+      
+      nav a {
+        color: black;
+        text-decoration: none;
+      }
+      
+      nav a:hover {
+        text-decoration: underline;
+      }
+      
+      main {
+        padding: 20px;
+      }
+      
+      h1 {
+        font-size: 36px;
+        margin-top: 0;
+      }
+      
+      .service {
+        border: 1px solid #ddd;
+        border-radius: 5px;
+        box-shadow: 2px 2px 5px #ccc;
+        margin-bottom: 20px;
+        padding: 20px;
+      }
+      
+      .service h2 {
+        font-size: 24px;
+        margin-top: 0;
+      }
+      
+      .service p {
+        font-size: 18px;
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <h1>E-Learning Platform</h1>
+    </header>
+    <nav>
+      <a href="#">Home</a>
+      <a href="#">Courses</a>
+      <a href="#">Services</a>
+      <a href="#">About Us</a>
+    </nav>
+    <main>
+      <h1>Our Services</h1>
+      
+      <div class="service">
+        <h2>Online Courses</h2>
+        <p>Take our online courses at your own pace and learn from top instructors.</p>
+      </div>
+      
+      <div class="service">
+        <h2>Live Classes</h2>
+        <p>Join live classes with our expert instructors and interact with other students.</p>
+      </div>
+      
+      <div class="service">
+        <h2>Personalized Learning</h2>
+        <p>Get personalized learning recommendations and track your progress.</p>
+      </div>
+    </main>
+  </body>
 </html>
