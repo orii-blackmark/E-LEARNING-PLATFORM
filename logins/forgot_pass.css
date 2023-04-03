@@ -1,0 +1,89 @@
+.container{
+    width: 400px;
+    margin: auto;
+    min-height: 40vh;
+    margin-top: 80px;
+    padding: 10px;
+    border-radius: 20px;
+    box-shadow: 5px 5px 20px 4px rgba(0,0,0,0.5);
+}
+form{
+    text-align: center;
+}
+form h3{
+    font-size: 25px;
+    font-weight: 600;
+}
+form .inputs{
+    display: flex;
+    flex-direction: row;
+    text-transform: capitalize;
+    padding: 5px;
+    margin-bottom: 5px;
+    margin-top: 5px;
+}
+form .inputs.names{
+    display: flex;
+    flex-direction: row;
+}
+
+form .inputs .name{
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+    text-align: left;
+    padding-left: 5px;
+}
+form .inputs{
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+    padding-left: 5px;
+}
+form .inputs .name label,
+form .inputs label{
+    padding-left: 5px;
+    font-weight: 500;
+    margin-bottom: 5px;
+    font-size: 18px;
+}
+form .inputs .name input,
+form .inputs input{
+    background: #f7f7f7;
+    border: none;
+    border-radius: 5px;
+    height: 35px;
+    outline: none;
+    font-size: 16px;
+    padding-left: 5px;
+    padding-right: 5px;
+}
+form .submit{
+    margin: 10px;
+}
+form .submit input{
+    margin: 5px;
+    width: 80%;
+    height: 40px;
+    border-radius: 20px;
+    font-size: 18px;
+    background: rgb(190, 190, 190);
+    border: none;
+    
+}
+form .submit input:hover{
+    background: #2d545e;
+    color: #fff;
+    transition: all ease-in-out .5s;
+}
+form .extras{
+    margin-bottom: 5px;
+}
+form .extras a{
+    text-decoration: none;
+    font-size: 17px;
+    color: rgb(38, 38, 102);
+}
+form .extras a:hover{
+    color: blue;
+}
