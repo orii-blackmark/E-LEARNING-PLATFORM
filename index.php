@@ -20,7 +20,7 @@
                 <li><a href="service.html">Services</a></li>
                 <li><a href="dashboard.html">Dashboard</a></li>
                 <li><a href="contact.html">Contact Us</a></li>
-                <li> <a href="login/main.php">Login</a>
+                <li> <a href="logins/sign up.php">Login</a>
                 </li>
             </ul>
         </div>
