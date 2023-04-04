@@ -1,0 +1,10 @@
+form .inputs input{
+    background: #f7f7f7;
+    border: none;
+    border-radius: 5px;
+    height: 40px;
+    outline: none;
+    font-size: 16px;
+    padding-left: 5px;
+    padding-right: 5px;
+}
