@@ -8,6 +8,10 @@ body{
     background: #f7f7f7;
     margin-top: 5px;
 }
+
+.left .cover{
+    background-size: cover;
+}
 .menu{
     height: 100px;
     margin-bottom: 10px;
@@ -109,7 +113,7 @@ border-bottom: 2px solid #2d545e;
 }
 .main .left img{
     height: 100%;
-}
+    width:100%}
 .main .right{
     width: 50%;
     height: 100%;
@@ -675,3 +679,68 @@ border-bottom: 2px solid #2d545e;
         font-weight: 400;
         text-transform: capitalize;
 }
+/*enrollment*/
+.ftco-intro {
+    color: rgba(255, 255, 255, 0.8);
+    z-index: 0;
+    overflow: hidden; }
+    .ftco-intro .img {
+      padding: 3em;
+      position: relative;
+      z-index: 0;
+      overflow: hidden; }
+      @media (max-width: 767.98px) {
+        .ftco-intro .img {
+          padding: 2em 1em; } }
+      .ftco-intro .overlay {
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        content: '';
+        opacity: .6;
+        background: #fff;
+        z-index: -1; }
+    @media (max-width: 991.98px) {
+      .ftco-intro {
+        background-position: center center !important; } }
+    .ftco-intro h2 {
+      color: #fff;
+      font-size: 24px;
+      font-weight: 700;
+      text-transform: uppercase; }
+      @media (max-width: 767.98px) {
+        .ftco-intro h2 {
+          font-size: 20px; } }
+      .ftco-intro h2 span {
+        background: #686e7c; }
+        .btn-primary {
+            color: #fff;
+            background-color: #686e7c;
+            border-color: #1ec476; }
+            .btn-primary:hover {
+              color: #fff;
+              background-color: #2a0d3d;
+              border-color: #022025; }
+            .btn-primary:focus, .btn-primary.focus {
+              color: #fff;
+              background-color: #1ec476;
+              border-color: #1ec476;
+              -webkit-box-shadow: 0 0 0 0.2rem rgba(38, 143, 255, 0.5);
+              box-shadow: 0 0 0 0.2rem rgba(38, 143, 255, 0.5); }
+            .btn-primary.disabled, .btn-primary:disabled {
+              color: #fff;
+              background-color: #1dbad6;
+              border-color: #1dbad6; }
+            .btn-primary:not(:disabled):not(.disabled):active, .btn-primary:not(:disabled):not(.disabled).active,
+            .show > .btn-primary.dropdown-toggle {
+              color: #fff;
+              background-color: #1dbad6;
+              border-color: #25270d; }
+              .btn-primary:not(:disabled):not(.disabled):active:focus, .btn-primary:not(:disabled):not(.disabled).active:focus,
+              .show > .btn-primary.dropdown-toggle:focus {
+                -webkit-box-shadow: 0 0 0 0.2rem rgba(38, 143, 255, 0.5);
+                box-shadow: 0 0 0 0.2rem rgba(38, 143, 255, 0.5); }
+          
+  
