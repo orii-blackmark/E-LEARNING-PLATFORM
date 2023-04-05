@@ -14,26 +14,26 @@
 </head>
 <body>
     <div class="container">
-        <form action="">
+        <form action="" name="form2" onsubmit="validateLogin()">
             <h3>Login </h3>
             <div class="inputs">
                 <label for="">Username</label>
-                <input type="email" name="" id="">
+                <input type="text" name="username" id="">
             </div>                
             <div class="inputs">
                 <label for="">Password</label>
-                <input type="password" name="" id="">
+                <input type="password" name="password" id="">
             </div>
             <div class="submit">
                 <input type="submit" value="Submit">
             </div>
             <div class="extras">
-                <a href="forget_pass.html">Forgot password?</a> <br>
+                <a href="forgot_pass.html">Forgot password?</a> <br>
                 Don't have an account?
                 <a href="sign up.html">Sign up here</a>
             </div>
         </form>
     </div>
-    
+    <script src="script.js"></script>
 </body>
 </html>
