@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="assets/logo.jpg" type="image/icon type">
+    <title>E-learning platform</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <style>
+        /* Style for the form container */
+        form {
+            margin: 0 auto;
+            width: 50%;
+            padding: 20px;
+            border: 2px solid #ddd;
+            border-radius: 5px;
+        }
+
+        /* Style for the form heading */
+        h1 {
+            text-align: center;
+            font-size: 36px;
+            color: #555;
+        }
+
+        /* Style for the form label */
+        label {
+            display: block;
+            margin-bottom: 5px;
+            font-size: 20px;
+            color: #666;
+        }
+
+        /* Style for the form input fields */
+        input[type="text"],
+        input[type="email"],
+        select {
+            width: 100%;
+            padding: 10px;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+            box-sizing: border-box;
+            margin-bottom: 10px;
+            font-size: 16px;
+            color: #333;
+        }
+
+        /* Style for the form submit button */
+        input[type="submit"] {
+            background-color: #4CAF50;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            padding: 10px 20px;
+            font-size: 20px;
+            cursor: pointer;
+        }
+
+        /* Style for the form radio button and checkbox */
+        input[type="radio"],
+        input[type="checkbox"] {
+            margin-right: 10px;
+            margin-left: 5px;
+            font-size: 16px;
+            color: #333;
+        }
+
+        /* Style for the form error message */
+        input:invalid {
+            border-color: red;
+        }
+
+        /* Style for the form success message */
+        .success {
+            color: green;
+            font-size: 18px;
+            text-align: center;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="menu" id="menu">
+        <div class="logo">
+            <img src="assets/logo.jpg" alt="ols logo">
+            <h1>OLSLEARN</h1>
+        </div>
+        <div class="sub-menu">
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li>Services</li>
+                <li><a href="dashboard.html">Dashboard</a>
+                </li>
+                <li><a href="help.html">Help</a></li>
+            </ul>
+        </div>
+    </div>
+    <div class="section1" id="section1">
+        <div id="left">
+            <div id="top">
+                <div id="logo">
+                    <img src="assets/logo.jpg" alt="ols logo">
+                </div>
+                <div id="desc">
+                    <h2>OLSLEARN</h2>
+                    <h3>Dashboard</h3>
+                </div>
+            </div>
+            <div id="lower">
+                <div id="categories">
+                    <h3><a href="personal_details.html">Personnal Details</a></h3>
+                </div>
+                <div id="categories" class="active">
+                    <h3>Courses</h3>
+                </div>
+                <div id="categories">
+                    <h3>Ongoing courses</h3>
+                </div>
+                <div id="categories">
+                    <h3><a href="projects.html">Projects</a></h3>
+                </div>
+                <div id="categories">
+                    <h3><a href="quizes.html">quizes and cats</a></h3>
+                </div>
+                <div id="categories">
+                    <h3><a href="assignment.html">Assignments</a></h3>
+                </div>
+                <div id="categories">
+                    <h3><a href="grading.html">Grading</a></h3>
+                </div>
+            </div>
+        </div>
+        <div id="right">
+            <div class="top">
+                <div class="icon"><img src="assets/icon.png" alt=""></div>
+                <div id="cate">
+                    <p>Courses</p>
+                </div>
+                <div id="user">
+                    <div class="img">
+                        <img src="assets/oriel.jpg" alt="img">
+                    </div>
+                    <div class="details">
+                        <p>Oriel kiplangat</p>
+                    </div>
+                </div>
+            </div>
+            <div class="mainpanel">
+                <form action="enroll.php" method="POST">
+                    <label for="name">Name:</label>
+                    <input type="text" id="name" name="name" required><br><br>
+
+                    <label for="email">Email:</label>
+                    <input type="email" id="email" name="email" required><br><br>
+
+                    <label for="course">Course:</label>
+                    <select id="course" name="course" required>
+                        <option value="" disabled selected>Select a course</option>
+                        <option value="html-css">HTML/CSS</option>
+                        <option value="javascript">JavaScript</option>
+                        <option value="python">Python</option>
+                    </select><br><br>
+
+                    <label for="payment">Payment method:</label>
+                    <label for="credit-card"><input type="radio" id="credit-card" name="payment" value="credit-card"
+                            required>Credit card</label>
+
+                    <label for="paypal"><input type="radio" id="paypal" name="payment"
+                            value="paypal">PayPal</label><br><br>
+
+                    <label for="terms"><input type="checkbox" id="terms" name="terms" required>I agree to the terms and
+                        conditions:</label>
+                    <br><br>
+
+                    <input type="submit" value="Enroll">
+                    <script>
+                        // Get the form element
+                        const form = document.querySelector('form');
+
+                        // Add event listener for form submission
+                        form.addEventListener('submit', (e) => {
+                            e.preventDefault(); // Prevent form from submitting
+
+                            // Get the form data
+                            const name = form.elements['name'].value;
+                            const email = form.elements['email'].value;
+                            const course = form.elements['course'].value;
+                            const payment = form.elements['payment'].value;
+                            const terms = form.elements['terms'].checked;
+
+                            // Validate the form data
+                            if (!name || !email || !course || !payment || !terms) {
+                                alert('Please fill in all required fields!');
+                                return;
+                            }
+
+                            // Send the form data to the server using fetch API
+                            fetch('enroll.php', {
+                                method: 'POST',
+                                body: JSON.stringify({ name, email, course, payment }),
+                                headers: {
+                                    'Content-Type': 'application/json'
+                                }
+                            })
+                                .then(response => response.json())
+                                .then(data => {
+                                    if (data.success) {
+                                        form.reset(); // Clear the form
+                                        alert('You have successfully enrolled in the course!');
+                                    } else {
+                                        alert('An error occurred while enrolling in the course. Please try again later.');
+                                    }
+                                })
+                                .catch(error => {
+                                    console.error(error);
+                                    alert('An error occurred while sending the form data. Please try again later.');
+                                });
+                        });
+
+                    </script>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <div class="footer">
+        <div class="row">
+            <div class="column">
+                <div class="one">
+                    <h3>About Us</h3>
+                    <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit.
+                        Molestias nam <br><br>ipsam cumque! Omnis quos nemo impedit dolor <br><br> ducimus suscipit
+                        soluta.</p>
+                </div>
+            </div>
+            <div class="column">
+                <div class="two">
+                    <h3>Company</h3>
+                    <ul>
+                        <li>Home</li>
+                        <li>Courses</li>
+                        <li>ORILEARN Academy</li>
+                        <li>Offers</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="column">
+                <div class="three">
+                    <h3>Follow Us</h3>
+                    <ul>
+                        <li>Instagram</li>
+                        <li>Twitter</li>
+                        <li>LinkedIn</li>
+                        <li>Facebook</li>
+                        <li>Github</li>
+                    </ul>
+                </div>
+
+            </div>
+            <div class="column">
+                <div class="four">
+                    <h3>Contact us</h3>
+                    <div class="input">
+                        Send us a message
+                        <form action="">
+                            <textarea id="message" cols="20" rows="4" placeholder="Write Something"></textarea>
+                            <input id="submit" type="submit" value="Send">
+                        </form>
+
+                    </div>
+                </div>
+            </div>
+            <div class="chatbot">
+                <h4>Chat with us</h4>
+                <div class="icon">
+                    <img src="assets/message.png" alt="">
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

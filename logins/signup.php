@@ -17,6 +17,7 @@ if (isset($_POST['submit'])) {
     $password=md5($_POST['password']);
     $cpassword=md5($_POST['cpassword']);
 
+<<<<<<< HEAD
     if ($password==$cpassword) {
         $sql="SELECT * FROM users WHERE email='$email'";
         $result=mysqli_query($conn,$sql);
@@ -45,4 +46,20 @@ if (isset($_POST['submit'])) {
       }else{ echo "alert('Password not matched.');";}
   } 
 
+=======
+$sql = "INSERT INTO users(fname,lname,email,pnumber,password) VALUES('$fname','$lname','$email','$pnumber','$password')";
+$result=mysqli_query($conn,$sql); 
+if ($result) { echo "
+<script>
+  alert('User registration completed.');
+</script>
+"; 
+}else{
+ "<script>
+ alert('There was an error when trying to create an account');
+  </script>
+  ";
+}
+}
+>>>>>>> 5816d093b56fe18bea8c1c3471fb3bc1c0476511
 ?>
