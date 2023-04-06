@@ -1,133 +1,113 @@
-const quizContainer = document.getElementById("quiz");
-const resultsContainer = document.getElementById("results");
-const submitButton = document.getElementById("submit");
-const previousButton = document.getElementById("previous");
-const nextButton = document.getElementById("next");
+// set time limit for the entire quiz
+const timeLimit = 60; // in seconds
 
+// array of questions
 const questions = [
   {
-    question: "What is the capital of France?",
-    answers: {
-      a: "Berlin",
-      b: "Paris",
-      c: "Dublin"
-    },
-    correctAnswer: "b"
+    question: "What is 2 + 2?",
+    choices: ["1", "2", "3", "4"],
+    correctAnswer: "4"
   },
   {
-    question: "What is the largest planet in our solar system?",
-    answers: {
-      a: "Saturn",
-      b: "Jupiter",
-      c: "Neptune"
-    },
-    correctAnswer: "b"
+    question: "What is 6 * 2?",
+    choices: ["10", "12", "14", "16"],
+    correctAnswer: "12"
   },
   {
-    question: "Who wrote the Harry Potter series of books?",
-    answers: {
-      a: "J.K. Rowling",
-      b: "Stephen King",
-      c: "George R.R. Martin"
-    },
-    correctAnswer: "a"
+    question: "What is 4 * 2?",
+    choices: ["6", "8", "10", "12"],
+    correctAnswer: "8"
   }
 ];
 
-let currentSlide = 0;
-const slides = document.querySelectorAll(".question");
+// variables to keep track of quiz progress
+let currentQuestion = 0;
+let score = 0;
 
-function buildQuiz() {
-  // variable to store the HTML output
-  const output = [];
+// variables to keep track of timer
+let timeLeft = timeLimit;
+let timerIntervalId;
 
-  // for each question...
-  questions.forEach((currentQuestion, questionNumber) => {
-    // variable to store the list of possible answers
-    const answers = [];
-
-    // and for each available answer...
-    for (letter in currentQuestion.answers) {
-      // ...add an HTML radio button
-      answers.push(
-        `<label>
-           <input type="radio" name="question${questionNumber}" value="${letter}">
-           ${letter} :
-           ${currentQuestion.answers[letter]}
-         </label>`
-      );
-    }
-
-    // add this question and its answers to the output
-    output.push(
-      `<div class="question">
-         <h2>${currentQuestion.question}</h2>
-         <div class="answers">${answers.join("")}</div>
-       </div>`
-    );
-  });
-
-  // finally, combine our output list into one string of HTML and put it on the page
-  quizContainer.innerHTML = output.join("");
+// function to start the quiz
+function startQuiz() {
+  // hide the start button and show the first question
+  document.getElementById("start-button").style.display = "none";
+  showQuestion();
+  
+  // start the timer
+  startTimer();
 }
 
-function showResults() {
-  // gather answer containers from our quiz
-  const answerContainers = quizContainer.querySelectorAll(".answers");
-
-  // keep track of user's answers
-  let numCorrect = 0;
-
-  // for each question...
-  questions.forEach((currentQuestion, questionNumber) => {
-    // find selected answer
-    const answerContainer = answerContainers[questionNumber];
-    const selector = `input[name=question${questionNumber}]:checked`;
-    const userAnswer = (answerContainer.querySelector(selector) || {}).value;
-
-    // if answer is correct
-    if (userAnswer === currentQuestion.correctAnswer) {
-      // add to the number of correct answers
-      numCorrect++;
-
-      // color the answers green
-      answerContainers[questionNumber].style.color = "lightgreen";
-    } else {
-      // if answer is wrong or blank
-      // color the answers red
-      answerContainers[questionNumber].style.color = "red";
-    }
+// function to show the current question
+function showQuestion() {
+  // hide all questions
+  document.querySelectorAll(".question").forEach(q => {
+    q.style.display = "none";
   });
-
-  // show number of correct answers out of total
-  resultsContainer.innerHTML = `${numCorrect} out of ${questions.length}`;
+  
+  // show the current question
+  const questionElem = document.getElementById(`question-${currentQuestion}`);
+  questionElem.style.display = "block";
+  
+  // update the question number
+  document.getElementById("question-number").textContent = `Question ${currentQuestion + 1}`;
+  
+  // clear the previous feedback
+  document.getElementById("feedback").textContent = "";
 }
 
-function showSlide(n) {
-    // make sure slide number is within the valid range
-    if (n < 0 || n >= slides.length) {
-      return;
+// function to handle submitting an answer
+function submitAnswer() {
+  // get the selected answer
+  const selectedAnswer = document.querySelector(`input[name="answer-${currentQuestion}"]:checked`);
+  
+  if (!selectedAnswer) {
+    // if no answer is selected, show an error message
+    document.getElementById("feedback").textContent = "Please select an answer";
+  } else {
+    // check if the answer is correct
+    if (selectedAnswer.value === questions[currentQuestion].correctAnswer) {
+      // increase the score if the answer is correct
+      score++;
     }
-  
-    // hide the current slide and show the new slide
-    slides[currentSlide].classList.remove("active-slide");
-    slides[n].classList.add("active-slide");
-  
-    // update currentSlide
-    currentSlide = n;
-  
-    // show/hide navigation buttons based on current slide
-    if (currentSlide === 0) {
-      previousButton.style.display = "none";
+    
+    // move on to the next question
+    currentQuestion++;
+    
+    if (currentQuestion < questions.length) {
+      // show the next question if there are more questions
+      showQuestion();
     } else {
-      previousButton.style.display = "inline-block";
-    }
-  
-    if (currentSlide === slides.length - 1) {
-      nextButton.style.display = "none";
-      submitButton.style.display = "inline-block";
-    } else {
-      nextButton.style.display = "inline-block";
-      submitButton.style.display = "none";
+      // end the quiz if there are no more questions
+      endQuiz();
     }
   }
+}
+
+// function to end the quiz
+function endQuiz() {
+  // stop the timer
+  clearInterval(timerIntervalId);
+  
+  // hide the questions and show the score
+  document.getElementById("quiz-form").style.display = "none";
+  document.getElementById("score").textContent = `You scored ${score} out of ${questions.length}`;
+  document.getElementById("time-left").textContent = `Time left: ${timeLeft} seconds`;
+  document.getElementById("results").style.display = "block";
+}
+
+// function to start the timer
+function startTimer() {
+  // update the timer display
+  document.getElementById("time-left").textContent = `Time left: ${timeLeft} seconds`;
+  
+  // set up the timer interval
+  timerIntervalId = setInterval(() => {
+    timeLeft--;
+    document.getElementById("time-left").textContent = `Time left: ${timeLeft} seconds`;
+    
+    if (timeLeft === 0) {
+      // end the quiz if time is up
+      endQuiz();
+    }
+  }, 100)}
