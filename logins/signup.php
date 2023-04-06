@@ -17,6 +17,36 @@ if (isset($_POST['submit'])) {
     $password=md5($_POST['password']);
     $cpassword=md5($_POST['cpassword']);
 
+<<<<<<< HEAD
+    if ($password==$cpassword) {
+        $sql="SELECT * FROM users WHERE email='$email'";
+        $result=mysqli_query($conn,$sql);
+        if (!$result->num_rows>0) { $sql = "INSERT INTO details
+        (fname,lname,email,password) VALUES('$fname','$lname','$email','$password')";
+        $result=mysqli_query($conn,$sql); 
+        if ($result) { echo "
+        <script>
+          alert('User registration completed.');
+        </script>
+        "; 
+        $fname="";
+        $lname="";
+        $email=""; 
+        $pnumber="";
+        $_POST['password']="";
+        $_POST['cpassword']=""; 
+      }else { echo "
+        <script>
+          alert('Ooops! something went wrong.');
+        </script>
+        "; } 
+      } else { echo "alert('Ooops! Email already exist.');";} 
+
+      
+      }else{ echo "alert('Password not matched.');";}
+  } 
+
+=======
 $sql = "INSERT INTO users(fname,lname,email,pnumber,password) VALUES('$fname','$lname','$email','$pnumber','$password')";
 $result=mysqli_query($conn,$sql); 
 if ($result) { echo "
@@ -31,4 +61,5 @@ if ($result) { echo "
   ";
 }
 }
+>>>>>>> 5816d093b56fe18bea8c1c3471fb3bc1c0476511
 ?>

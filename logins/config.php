@@ -9,6 +9,9 @@ $conn = mysqli_connect($server, $user, $pass, $database);
 
 if (!$conn) {
     die("<script>alert('connection failed.')</script>");
+<<<<<<< HEAD
+}
+=======
 }
 
 
@@ -35,3 +38,4 @@ if ($result) { echo "
 }
 }
 ?>
+>>>>>>> 5816d093b56fe18bea8c1c3471fb3bc1c0476511
