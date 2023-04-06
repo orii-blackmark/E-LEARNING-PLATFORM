@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="assets/logo.jpg" type="image/icon type">
+    <title>E-learning platform</title>
+    <link rel="stylesheet" type="text/css"  href="style.css">
+</head>
+<body>
+    <div class="menu" id="menu">
+        <div class="logo">
+            <img src="assets/logo.jpg" alt="ols logo">
+            <h1>OLSLEARN</h1>
+        </div>
+        <div class="sub-menu">
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li>Services</li>
+                <li><a href="dashboard.html">Dashboard</a>
+                </li>
+                <li><a href="help.html">Help</a></li>
+            </ul>
+        </div>
+    </div>
+    <div class="section1" id="section1">
+       <div id="left">
+        <div id="top">
+            <div id="logo">
+                <img src="assets/logo.jpg" alt="ols logo">
+            </div>
+            <div id="desc">
+                <h2>OLSLEARN</h2>
+                <h3>Dashboard</h3>
+            </div>
+            <div id="collapse-btn">
+                <button onclick="toggleDashboard()">Collapse Dashboard</button>
+            </div>
+        </div>
+        <div id="lower" class="collapsed">
+            <div id="categories">
+                    <h3><a href="personal_details.html">Personnal Details</a></h3>
+            </div>
+            <div id="categories" class="active">
+                <h3>Courses</h3>
+            </div>
+            <div id="categories">
+                <h3><a href="projects.html">Projects</a></h3>
+            </div>
+            <div id="categories">
+                <h3><a href="quizes.html">quizes and cats</a></h3>
+            </div>
+            <div id="categories">
+                <h3><a href="assignment.html">Assignments</a></h3>
+            </div>
+            <div id="categories">
+                <h3><a href="grading.html">Grading</a></h3>
+            </div>
+        </div>
+       </div>
+       <div id="right">
+        <div class="top">
+            <div id="icon"><img src="assets/icon.png" alt=""></div>
+            <div id="cate">
+                <p>Courses</p>
+            </div>
+            <div id="user">
+                <div class="img">
+                    <img src="assets/oriel.jpg" alt="img">
+                </div>
+                <div class="details">
+                    <p>Oriel kiplangat</p>
+                </div>
+            </div>
+        </div>
+        <div class="mainpanel">
+            <h3>
+                Recents to be worked on
+            </h3>
+            <div class="recents">
+                <div class="units">
+                    <div class="title">
+                        <h4>BMGT 320</h4>
+                    </div>
+                    <div class="many">
+                        <p>5 Units</p>
+                    </div>
+                    <div class="due-date">
+                        <p>Due date: 02/4/2023</p>
+                    </div>
+                </div>
+                <div class="units">
+                    <div class="title">
+                        <h4>BMGT 620</h4>
+                    </div>
+                    <div class="many">
+                        <p>5 Units</p>
+                    </div>
+                    <div class="due-date">
+                        <p>Due date: 05/4/2023</p>
+                    </div>
+                </div>
+                <div class="units">
+                    <div class="title">
+                        <h4>BMGT 420</h4>
+                    </div>
+                    <div class="many">
+                        <p>5 Units</p>
+                    </div>
+                    <div class="due-date">
+                        <p>Due date: 01/4/2023</p>
+                    </div>
+                </div>
+                <div class="units">
+                    <div class="title">
+                        <h4>BMGT 120</h4>
+                    </div>
+                    <div class="many">
+                        <p>5 Units</p>
+                    </div>
+                    <div class="due-date">
+                        <p>Due date: 02/4/2023</p>
+                    </div>
+                </div>
+                <div class="units">
+                    <div class="title">
+                        <h4>BMGT 220</h4>
+                    </div>
+                    <div class="many">
+                        <p>5 Units</p>
+                    </div>
+                    <div class="due-date">
+                        <p>Due date: 02/4/2023</p>
+                    </div>
+                </div>
+            </div>
+            <h3>
+                Upcoming Assignments
+            </h3>
+            <div class="upcoming">
+                <div class="upcoming-details">
+                    <div class="title">
+                        <h4>CS 101</h4>
+                    </div>
+                    <div class="date">
+                        <p>Due on: 04/15/2023</p>
+                    </div>
+                </div>
+                <div class="upcoming-details">
+                    <div class="title">
+                        <h4>BMGT 320</h4>
+                    </div>
+                    <div class="date">
+                        <p>Due on: 04/20/2023</p>
+                    </div>
+                </div>
+                <div class="upcoming-details">
+                    <div class="title">
+                        <h4>MATH 202</h4>
+                    </div>
+                    <div class="date">
+                        <p>Due on: 04/25/2023</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+       </div>
+    </div>
+    <script>
+        function toggleDashboard() {
+            var dash = document.getElementById("lower");
+            dash.classList.toggle("collapsed");
+        }
+        // Get the button to toggle the dashboard
+var collapseButton = document.getElementById("collapse-btn");
+
+// Get the dashboard element
+var dashboard = document.getElementById("lower");
+
+// Add an event listener to the button
+collapseButton.addEventListener("click", toggleDashboard);
+
+// Define the toggleDashboard function
+function toggleDashboard() {
+  // Toggle the "collapsed" class on the dashboard element
+  dashboard.classList.toggle("collapsed");
+}
+    </script>
+</body>
+</html>

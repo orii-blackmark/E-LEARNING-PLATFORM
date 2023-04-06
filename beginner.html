@@ -21,80 +21,58 @@
         <link rel="stylesheet" type="text/css" href="style.css">
         <link rel="stylesheet" href="projects/pr_styles.css">
         <style>
-            /* Main content styles */
-            main {
-                max-width: 800px;
-                margin: 0 auto;
-                padding: 20px;
-            }
-            
-            assignment-container{
-                display: flex;
-                flex-direction: column;
-                justify-content: center;
-                border-radius: 5px;
-                border: 1px solid #ccc;
-                padding: 20px;
-            }
-            main p {
-                font-size: 18px;
-                line-height: 1.5;
-                margin-bottom: 20px;
-            }
+.active-slide {
+  display: block;
+}
 
-            main h4 {
-                font-size: 20px;
-                margin-top: 40px;
-                margin-bottom: 20px;
-            }
+.quiz {
+  max-width: 800px;
+  margin: 0 auto;
+}
 
-            main input[type="file"] {
-                display: block;
-                margin-bottom: 20px;
-            }
+.question {
+  margin-top: 20px;
+}
 
-            main input[type="text"] {
-                display: block;
-                width: 100%;
-                padding: 10px;
-                border-radius: 5px;
-                border: 1px solid #ccc;
-                margin-bottom: 20px;
-            }
+.question h2 {
+  font-size: 24px;
+  margin-top: 0;
+  margin-bottom: 10px;
+}
 
-            main input[type="submit"] {
-                background-color: #333;
-                color: #fff;
-                border: none;
-                padding: 10px 20px;
-                border-radius: 5px;
-                font-size: 18px;
-                cursor: pointer;
-                text-align: center;
-                width: 40%;
-            }
+.answers {
+  margin-left: 30px;
+  margin-bottom: 20px;
+}
 
-            main input[type="submit"]:hover {
-                background-color: #666;
-            }
+label {
+  font-size: 18px;
+  display: block;
+  margin-bottom: 10px;
+}
 
-            main p.note {
-                font-size: 16px;
-                line-height: 1.5;
-                margin-top: 40px;
-            }
+input[type="radio"] {
+  margin-right: 10px;
+}
 
-            form {
-                background-color: #fff;
-                padding: 20px;
-                border-radius: 5px;
-                box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-                margin-top: 20px;
-            }
+.actions {
+  margin-top: 30px;
+}
 
-            form p {
-                margin-bottom: 10px;
-            }
+button {
+  font-size: 18px;
+  padding: 10px 20px;
+  background-color: #4CAF50;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+button:hover {
+  background-color: #3e8e41;
+}
         </style>
     </head>
 
@@ -135,11 +113,11 @@
                     <div id="categories">
                         <h3><a href="projects.html">Projects</a></h3>
                     </div>
-                    <div id="categories">
-                        <h3><a href="quizes.html">Quizes & Cats</a></h3>
-                    </div>
                     <div id="categories" class="active">
-                        <h3>Assignments</h3>
+                        <h3>Quizes & Cats</h3>
+                    </div>
+                    <div id="categories">
+                        <h3><a href="assignment.html">Assignments</a></h3>
                     </div>
                     <div id="categories">
                         <h3><a href="grading.html">Grading</a></h3>
@@ -162,66 +140,24 @@
                     </div>
                 </div>
                 <!--WORKSPACE-->
-                <div class="assignment-container">
-                    <main>
-                        <p>Submission Deadline:</p>
-
-                        <form method="post" action="submit.php" enctype="multipart/form-data">
-                            <p>Select your assignment file:</p>
-                            <input type="file" name="assignment" accept=".pdf,.doc,.docx" required>
-                            <br>
-                            <h4>Save as</h4>
-                            <input type="text" required>
-                            <option value="select" required>
-                            </option>
-                            <input type="submit" value="Submit">
-                        </form>
-
-                        <p>Please note that once you click on the "Submit" button, you will not be able to make any
-                            changes to your submission.</p>
-
-
-                    </main>
-                </div>
-                <script>
-                    const form = document.querySelector('form');
-                    const fileInput = document.querySelector('input[type="file"]');
-                    const maxSize = 10 * 1024 * 1024 * 1024; // 100 MB
-
-                    form.addEventListener('submit', (event) => {
-                        event.preventDefault();
-
-                        const file = fileInput.files[0];
-
-                        if (!file) {
-                            alert('Please select a file');
-                            return;
-                        }
-
-                        if (!/\.pdf$|\.doc$|\.docx$/i.test(file.name)) {
-                            alert('Please upload a PDF or Word document');
-                            return;
-                        }
-
-                        if (file.size > maxSize) {
-                            alert('Please upload a file that is smaller than 10 MB');
-                            return;
-                        }
-
-                        form.submit();
-                    });
-                </script>
+                <div id="quiz"></div>
+                <div id="results"></div>
+                <button id="previous">Previous Question</button>
+                <button id="next">Next Question</button>
+                <button id="submit">Submit Answers</button>
+            
+                <script src="script.js"></script>
                 <!--WORKSPACE-->
             </div>
         </div>
-
         <div class="footer">
             <div class="row">
                 <div class="column">
                     <div class="one">
                         <h3>About Us</h3>
                         <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit.
-                            Molestias nam <br><br>ipsam cumque! Omnis quos nemo impedit dolor <br><br> ducimus suscipit
+                            Molestias nam <br><br>ipsam cumque! Omnis quos nemo impedit dolor <br><br> ducimus
+                            suscipit
                             soluta.</p>
                     </div>
                 </div>
