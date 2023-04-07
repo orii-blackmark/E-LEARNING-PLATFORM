@@ -13,6 +13,7 @@ body{
 .left .cover{
     background-size: cover;
 }
+
 .menu{
     height: 100px;
     margin-bottom: 10px;
@@ -66,17 +67,14 @@ border-bottom: 2px solid #2d545e;
     width: 84%;
     margin-bottom: auto;
     margin-right: 10px;
-}
-.menu .sub-menu ul{
-    display: inline-flex;
-    padding: 5px;
-    list-style: none;
+    border: solid;
     
 }
-.menu .sub-menu ul li{
+.menu .sub-menu ul li a{
+    border: solid ;
     margin: 5px;
-    padding-left: 5px;
-    padding-right: 5px;
+    padding-left: 15px;
+    padding-right: 15px;
     min-width: 105px;
     text-align: center;
     color: #fff;
@@ -84,11 +82,28 @@ border-bottom: 2px solid #2d545e;
     border-radius: 5px;
     margin-left: 40px;
     cursor: pointer;
-    height: 40px;
+    height: 50px;
     line-height: 35px;
     background: #2d545e;
-
 }
+
+.menu .sub-menu ul{
+    display: inline-flex;
+    padding: 5px;
+    list-style: none;
+    
+}
+
+.menu .sub-menu ul li{
+    margin: 5px;
+    text-align: center;
+    font-size: 17px;
+    margin-left: 40px;
+    cursor: pointer;
+    height: 40px;
+    line-height: 35px;
+}
+
 .menu .sub-menu ul li:hover{
     background: #4f556e;
 }
@@ -123,48 +138,74 @@ border-bottom: 2px solid #2d545e;
 }
 .main .right .top{
     padding: 5px;
-    height: 50%;
+    height: 70%;
 }
 .main .right .top h3{
     padding: 5px;
-    font-size: 45px;
+    font-size: 1px;
     text-align: center;
     color: rgb(18, 71, 54);
 }
 .main .right .top p{
     padding: 5px;
-    font-size: 21px;
     color: rgb(29, 48, 42);
+    text-align: center;
 }
 .main .right .bottom{
-    height: 50%;
+    height: 30%;
     display: flex;
     flex-direction: column;
+    align-content: center;
     
 }
 .main .right .bottom form{
     text-align: center;
     margin-top: 10px;
+    align-content: center;
+    justify-content: center;
+    align-content: flex-end;
 }
-.main .right .bottom button{
+.main .right .botntom .button{
     width: 80%;
     height: 50px;
     margin-top: 40px;
     border-radius: 20px;
     font-size: 24px;
     outline: none;
-    border: none;
     background: #2d545e;
     color: #fff;
+    margin-left: auto;
+    margin-right: auto;
+    
 
 }
-.main .right .bottom button:hover{
+.main .right .bottom .button{
+    height: 80px;
+    justify-content: space-between;
+}
+.main .right .bottom .button a{
+    text-align: center;
+    color: #fff;
+    background: #2d545e;
+    padding: 5px 30%;
+    font-size: 24px;
+    border-radius: 20px;
+    margin: auto;
+    outline: none;
+    margin-top: 40px;
+    margin-bottom: 20px;
+
+}
+
+.main .right .bottom .button a:hover{
     background: transparent;
     font-size: 25px;
     border: solid 2px #2d545e;
     color: #111;
     transition: all ease-in-out .6s;
+    
 }
+
 .section1{
     width: 95%;
     margin: auto;
@@ -296,6 +337,7 @@ border-bottom: 2px solid #2d545e;
     transition: all ease-out .5s;
 }
 /*FOOTER*/
+
 .footer{
     height: 70vh;
     width: 100%;
