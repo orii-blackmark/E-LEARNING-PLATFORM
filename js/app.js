@@ -121,6 +121,7 @@ class Chatbox {
         "what can you tell me about yourself?": "I am the one the gets you out of trouble when you are stuck.",
         "can i get your number?": "I am not allowed to give out my number.",
         "can i get your picture?": "yeah sure, here you go.",
+        "How are you?": "I am fine, how about you?",
 
       };
     }

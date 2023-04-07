@@ -19,69 +19,121 @@
     <link rel="stylesheet" type="text/css"  href="style.css">
     <link rel="stylesheet" href="projects/pr_styles.css">
     <style>
-
-* {
-  box-sizing: border-box;
+.chatbot {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  z-index: 9999;
 }
 
-main {
+.chatbox {
+  width: 350px;
+  height: 500px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  background-color: #fff;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  transform: translateY(100%);
+  transition: transform 0.3s ease-in-out;
+}
+
+.chatbox.open {
+  transform: translateY(0);
+}
+
+.chatbox__support {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.chatbox__header {
+  display: flex;
+  align-items: center;
   padding: 20px;
+  background-color: #1b1b1b;
+  color: #fff;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
 }
 
-#timer {
-  font-size: 24px;
-  font-weight: bold;
-  margin-bottom: 20px;
+.chatbox__image--header img {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  margin-right: 10px;
 }
 
-.question {
-  display: none;
+.chatbox__messages {
+  flex: 1;
+  padding: 20px;
+  overflow-y: scroll;
 }
 
-.question.active {
-  display: block;
-}
-
-.question h2 {
-  margin-top: 0;
-}
-
-.question p {
-  font-size: 18px;
-  margin-bottom: 10px;
-}
-
-.question label {
-  display: block;
-  margin-bottom: 10px;
-}
-
-.feedback {
-  margin-top: 10px;
-  font-weight: bold;
-}
-
-button {
-  background-color: #333;
-  color: white;
-  border: none;
+.chatbox__footer {
+  display: flex;
+  align-items: center;
   padding: 10px 20px;
-  font-size: 18px;
-  margin-top: 20px;
+  background-color: #f5f5f5;
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
+}
+
+.chatbox__footer input[type="text"] {
+  flex: 1;
+  border: none;
+  outline: none;
+  padding: 10px;
+  margin-right: 10px;
+  font-size: 16px;
+}
+
+.chatbox__footer .send__button {
+  border: none;
+  outline: none;
+  background-color: transparent;
   cursor: pointer;
 }
 
-button:hover {
-  background-color: #555;
+.chatbox__button button {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  border: none;
+  outline: none;
+  background-color: #1b1b1b;
+  color: #fff;
+  font-size: 24px;
+  font-weight: bold;
+  cursor: pointer;
+  position: absolute;
+  bottom: 20px;
+  right: 20px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s ease-in-out;
 }
 
-button:disabled {
-  background-color: gray;
-  cursor: not-allowed;
+.chatbox__button button:hover {
+  transform: scale(1.1);
 }
 
-#submit-button {
-  display: none;
+.chatbox__button button:focus {
+  transform: scale(1.05);
+  outline: none;
+}
+
+@media (max-width: 480px) {
+  .chatbox {
+    width: 100%;
+    height: 100%;
+    border-radius: 0;
+  }
+
+  .chatbox__button button {
+    display: none;
+  }
 }
 
     </style>
@@ -287,6 +339,60 @@ button:disabled {
         </div>
     </div>
     <script src="./js/app.js"></script>
-    <script src="quiz.js"></script>
+    <script>
+      // Set up variables
+const welcomeMessage = document.getElementById('welcome-message');
+const typingDelay = 50; // Delay between each character
+const erasingDelay = 30; // Delay between erasing characters
+const newTextDelay = 2000; // Delay before typing next message
+let textIndex = 0;
+let charIndex = 0;
+let messages = ['Hi! How can I help you today?', 'Do you have any questions?', 'I am here to assist you.'];
+
+// Function to simulate typing effect
+function type() {
+  if (charIndex < messages[textIndex].length) {
+    welcomeMessage.textContent += messages[textIndex].charAt(charIndex);
+    charIndex++;
+    setTimeout(type, typingDelay);
+  } else {
+    setTimeout(erase, newTextDelay);
+  }
+}
+
+// Function to simulate erasing effect
+function erase() {
+  if (charIndex > 0) {
+    welcomeMessage.textContent = messages[textIndex].substring(0, charIndex-1);
+    charIndex--;
+    setTimeout(erase, erasingDelay);
+  } else {
+    textIndex++;
+    if (textIndex >= messages.length) {
+      textIndex = 0;
+    }
+    setTimeout(type, typingDelay + 1100);
+  }
+}
+
+// Function to open the chatbox and start the typing effect
+function openChatbox() {
+  document.querySelector('.chatbox').classList.add('open');
+  type();
+}
+
+// Function to close the chatbox
+function closeChatbox() {
+  document.querySelector('.chatbox').classList.remove('open');
+}
+
+// Function to handle pressing Enter key
+function isEnter(e) {
+  if (e.keyCode == 13) {
+    // Code to handle sending message
+  }
+}
+
+    </script>
 </body>
 </html>
