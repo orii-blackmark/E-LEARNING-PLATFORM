@@ -122,6 +122,31 @@ class Chatbox {
         "can i get your number?": "I am not allowed to give out my number.",
         "can i get your picture?": "yeah sure, here you go.",
         "How are you?": "I am fine, how about you?",
+        "how are you": "I am fine, how about you?",
+        "niaje": "nko fity",
+        "niaje?": "nko fity",
+        "What are you doing?": "I am chatting with you.",
+        "what are you doing?": "I am chatting with you.",
+        "what are you doing": "I am chatting with you.",
+        "what is your nature?": "I am a chatbot.",
+        "what is your nature": "I am a chatbot.",
+        "What is your nature?": "I am a chatbot.",
+        "What is your nature": "I am a chatbot.",
+        "uko aje?": "nko fity",
+        "uko aje": "nko fity",
+        "Uko aje?": "nko fity",
+        "Uko aje": "nko fity",
+        "À plus tard! (See you later!) ":"À plus tard!  Passe une bonne journée. (See you later! Have a good day.)",
+        "À bientôt! (See you soon!)":"À bientôt! ",
+        "Au revoir! (Goodbye!)":"Au revoir! À bientôt. (Goodbye! See you soon.)",
+        "bonjour(hello)":"Bonjour! Comment ça va? (Hello! How are you?)",
+        "salut(hi)":"Salut! Comment ça va? (Hi! How are you?)",
+        "bonjour(hello)":"Bonjour! Bienvenue. (Hello! Welcome.)",
+        "salut(hi)":"Salut! Enchanté(e). (Hi! Nice to meet you.)",
+        "Hi! How's your day going?":"Hi there! It's going pretty well, thanks for asking.",
+        "hi! How's your day going?":"Hi there! It's going pretty well, thanks for asking.",
+        "How about you?":"My day has been alright so far. How about yours?"
+
 
       };
     }
