@@ -1,7 +1,7 @@
 # E-LEARNING-PLATFORM
 ### Contributors
 1. Oriel Kiplangat kiplangatoriel@gmail.com
-2. Lawrence Wafula 
+2. Lawrence Wafula warsamegift@gmail.com
 3. Steven Mwega Kamau
 
 ## Overview
