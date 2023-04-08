@@ -145,7 +145,8 @@ class Chatbox {
         "salut(hi)":"Salut! Enchanté(e). (Hi! Nice to meet you.)",
         "Hi! How's your day going?":"Hi there! It's going pretty well, thanks for asking.",
         "hi! How's your day going?":"Hi there! It's going pretty well, thanks for asking.",
-        "How about you?":"My day has been alright so far. How about yours?"
+        "How about you?":"My day has been alright so far. How about yours?",
+        
 
 
       };
