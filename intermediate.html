@@ -19,123 +19,124 @@
     <link rel="stylesheet" type="text/css"  href="style.css">
     <link rel="stylesheet" href="projects/pr_styles.css">
     <style>
-.chatbot {
-  position: fixed;
-  bottom: 20px;
-  right: 20px;
-  z-index: 9999;
+      /* main */
+main {
+display: flex;
+justify-content: center;
+align-items: center;
+height: 100vh;
+background-color: #f2f2f2;
+overflow-y: auto;
 }
 
-.chatbox {
-  width: 350px;
-  height: 500px;
-  border-radius: 10px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
-  background-color: #fff;
-  display: flex;
-  flex-direction: column;
-  overflow: hidden;
-  transform: translateY(100%);
-  transition: transform 0.3s ease-in-out;
+/* article */
+article {
+max-width: 800px;
+margin: 10px;
+padding: 20px;
+border-radius: 10px;
+background-color: #ffffff;
+box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+text-align: center;
 }
 
-.chatbox.open {
-  transform: translateY(0);
+/* title */
+.title {
+font-size: 2rem;
+margin-bottom: 10px;
+color: #333333;
 }
 
-.chatbox__support {
-  flex: 1;
-  display: flex;
-  flex-direction: column;
+/* subtitle */
+.subtitle {
+font-size: 1.5rem;
+margin-bottom: 10px;
+color: #666666;
 }
 
-.chatbox__header {
-  display: flex;
-  align-items: center;
-  padding: 20px;
-  background-color: #1b1b1b;
-  color: #fff;
-  border-top-left-radius: 10px;
-  border-top-right-radius: 10px;
+/* description */
+.description {
+font-size: 1.2rem;
+line-height: 1.5;
+margin-bottom: 20px;
+color: #666666;
 }
 
-.chatbox__image--header img {
-  width: 40px;
-  height: 40px;
-  border-radius: 50%;
-  margin-right: 10px;
+/* list */
+.list {
+font-size: 1.2rem;
+text-align: left;
+margin-bottom: 20px;
+color: #666666;
 }
 
-.chatbox__messages {
-  flex: 1;
-  padding: 20px;
-  overflow-y: scroll;
+.list li {
+margin-bottom: 10px;
 }
 
-.chatbox__footer {
-  display: flex;
-  align-items: center;
-  padding: 10px 20px;
-  background-color: #f5f5f5;
-  border-bottom-left-radius: 10px;
-  border-bottom-right-radius: 10px;
+/* progress-tracker */
+.progress-tracker {
+margin-bottom: 20px;
 }
 
-.chatbox__footer input[type="text"] {
-  flex: 1;
-  border: none;
-  outline: none;
-  padding: 10px;
-  margin-right: 10px;
-  font-size: 16px;
+.progress {
+width: 100%;
+height: 20px;
+margin-bottom: 10px;
+background-color: #EAEAEA;
+border-radius: 10px;
+position: relative;
+overflow: hidden;
 }
 
-.chatbox__footer .send__button {
-  border: none;
-  outline: none;
-  background-color: transparent;
-  cursor: pointer;
+.progress-bar {
+height: 100%;
+background-color: #2196F3;
+border-radius: 10px;
+position: absolute;
+top: 0;
+left: 0;
+text-align: center;
+line-height: 20px;
+color: #FFF;
+font-size: 0.9rem;
+transition: width 0.5s ease;
 }
 
-.chatbox__button button {
-  width: 60px;
-  height: 60px;
-  border-radius: 50%;
-  border: none;
-  outline: none;
-  background-color: #1b1b1b;
-  color: #fff;
-  font-size: 24px;
-  font-weight: bold;
-  cursor: pointer;
-  position: absolute;
-  bottom: 20px;
-  right: 20px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
-  transition: transform 0.3s ease-in-out;
+/* progress-text */
+.progress-text {
+font-size: 1.2rem;
+margin-bottom: 10px;
+color: #666666;
 }
 
-.chatbox__button button:hover {
-  transform: scale(1.1);
+/* link */
+.link {
+color: #2196F3;
+text-decoration: none;
 }
 
-.chatbox__button button:focus {
-  transform: scale(1.05);
-  outline: none;
+.link:hover {
+text-decoration: none;
 }
 
-@media (max-width: 480px) {
-  .chatbox {
-    width: 100%;
-    height: 100%;
-    border-radius: 0;
-  }
-
-  .chatbox__button button {
-    display: none;
-  }
+/* button */
+.button {
+display: inline-block;
+padding: 10px 20px;
+background-color: #000;
+color: #ffffff;
+border-radius: 5px;
+border: none;
+font-size: 1.2rem;
+text-transform: uppercase;
+cursor: pointer;
+transition: background-color 0.5s ease;
 }
 
+.button:hover {
+background-color: #fff;
+}
     </style>
 </head>
 <body>
@@ -188,9 +189,8 @@
        </div>
        <div id="right">
         <div class="top">
-            <div id="icon"><img src="assets/icon.png" alt=""></div>
             <div id="cate">
-                <p>Projects</p>
+                <p>Quizes and Cats</p>
             </div>
             <div id="user">
                 <div class="img">
@@ -203,50 +203,32 @@
         </div>
 <!--WORKSPACE-->
 <main>
-    <div id="start-quiz">
-      <h2>Welcome to the Math Quiz</h2>
-      <p>Are you ready to begin?</p>
-      <button id="start-button">Start Quiz</button>
+  <article>
+    <h1 class="title">Module 2 -An introduction to CSS</h1>
+    <p class="description">Welcome to Module 1 of the CSS course. In this module, you will learn the basics of CSS and how to create a simple styling pages.</p>
+
+    <h2 class="subtitle">Learning Objectives</h2>
+    <ul class="list">
+      <li>Understand the role of CSS in web development</li>
+      <li>Create a basic CSS document</li>
+      <li>Use common CSS tags to structure content</li>
+    </ul>
+
+    <div class="progress-tracker">
+      <h2 class="subtitle">Progress Tracker</h2>
+      <div class="progress">
+        <div class="progress-bar" style="width: 40%">40%</div>
+      </div>
+      <p class="progress-text">You have completed 4 out of 10 tasks in this module.</p>
     </div>
-  
-    <form id="quiz-form" style="display:none;">
-      <div class="question">
-        <h2>Question 1:</h2>
-        <p>What is 2 + 2?</p>
-        <label><input type="radio" name="q1" value="1">1</label>
-        <label><input type="radio" name="q1" value="2">2</label>
-        <label><input type="radio" name="q1" value="3">3</label>
-        <label><input type="radio" name="q1" value="4">4</label>
-        <div class="feedback"></div>
-      </div>
-  
-      <div class="question">
-        <h2>Question 2:</h2>
-        <p>What is 6 * 2?</p>
-        <label><input type="radio" name="q2" value="10">10</label>
-        <label><input type="radio" name="q2" value="12">12</label>
-        <label><input type="radio" name="q2" value="14">14</label>
-        <label><input type="radio" name="q2" value="16">16</label>
-        <div class="feedback"></div>
-      </div>
-  
-      <div class="question">
-        <h2>Question 3:</h2>
-        <p>What is 4 * 2?</p>
-        <label><input type="radio" name="q3" value="6">6</label>
-        <label><input type="radio" name="q3" value="8">8</label>
-        <label><input type="radio" name="q3" value="10">10</label>
-        <label><input type="radio" name="q3" value="12">12</label>
-        <div class="feedback"></div>
-      </div>
-  
-      <button type="submit" id="submit-button">Submit</button>
-    </form>
-  
-    <div id="timer" style="display:none;">
-      Time Remaining: <span id="time-left"></span>
-    </div>
-  </main>
+
+    <h2 class="subtitle">Next Task</h2>
+    <p class="description">Complete the <a class="link" href="quiz.html">CSS Quiz</a> to test your knowledge of CSS basics.</p>
+
+    <button class="button"><a class="link" href="#">Next Module</a></button>
+  </article>
+</main>
+
   
 
 <!--WORKSPACE-->
@@ -339,60 +321,6 @@
         </div>
     </div>
     <script src="./js/app.js"></script>
-    <script>
-      // Set up variables
-const welcomeMessage = document.getElementById('welcome-message');
-const typingDelay = 50; // Delay between each character
-const erasingDelay = 30; // Delay between erasing characters
-const newTextDelay = 2000; // Delay before typing next message
-let textIndex = 0;
-let charIndex = 0;
-let messages = ['Hi! How can I help you today?', 'Do you have any questions?', 'I am here to assist you.'];
-
-// Function to simulate typing effect
-function type() {
-  if (charIndex < messages[textIndex].length) {
-    welcomeMessage.textContent += messages[textIndex].charAt(charIndex);
-    charIndex++;
-    setTimeout(type, typingDelay);
-  } else {
-    setTimeout(erase, newTextDelay);
-  }
-}
-
-// Function to simulate erasing effect
-function erase() {
-  if (charIndex > 0) {
-    welcomeMessage.textContent = messages[textIndex].substring(0, charIndex-1);
-    charIndex--;
-    setTimeout(erase, erasingDelay);
-  } else {
-    textIndex++;
-    if (textIndex >= messages.length) {
-      textIndex = 0;
-    }
-    setTimeout(type, typingDelay + 1100);
-  }
-}
-
-// Function to open the chatbox and start the typing effect
-function openChatbox() {
-  document.querySelector('.chatbox').classList.add('open');
-  type();
-}
-
-// Function to close the chatbox
-function closeChatbox() {
-  document.querySelector('.chatbox').classList.remove('open');
-}
-
-// Function to handle pressing Enter key
-function isEnter(e) {
-  if (e.keyCode == 13) {
-    // Code to handle sending message
-  }
-}
-
-    </script>
+   
 </body>
 </html>

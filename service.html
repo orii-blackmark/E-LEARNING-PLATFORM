@@ -1,302 +1,268 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="icon" href="logo.jpg" type="image/icon type">
-  <title>E-learning platform</title>
-  <link rel="stylesheet" type="text/css" href="style.css">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="logo.jpg" type="image/icon type">
+    <title>E-learning platform</title>
+    <link rel="stylesheet" type="text/css"  href="style.css">
+    <style>
+      .services {
+  padding: 50px 0;
+}
 
+.search-container {
+  margin-bottom: 30px;
+  display: flex;
+  justify-content: center;
+}
+
+.search-container input[type="text"] {
+  padding: 10px;
+  width: 60%;
+  border: none;
+  border-radius: 5px 0 0 5px;
+  font-size: 18px;
+  background-color: #f2f2f2;
+}
+
+.search-container button[type="submit"] {
+  padding: 10px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 24px;
+  color: #007bff;
+}
+
+.services-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.service {
+  width: 48%;
+  margin-bottom: 30px;
+  padding: 20px;
+  background-color: #f2f2f2;
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.service img {
+  width: 100%;
+  margin-bottom: 20px;
+  border-radius: 5px;
+}
+
+.service h3 {
+  font-size: 24px;
+  margin-bottom: 10px;
+}
+
+.service p {
+  font-size: 16px;
+  margin-bottom: 20px;
+}
+
+.service a {
+  display: inline-block;
+  padding: 10px 20px;
+  background-color: #007bff;
+  color: #fff;
+  border-radius: 5px;
+  transition: all 0.3s ease;
+}
+
+.service a:hover {
+  background-color: #0062cc;
+  text-decoration: none;
+}
+    </style>
 </head>
-
-<body>
-  <div class="menu">
-    <div class="logo">
-      <img src="assets/logo.jpg" alt="ols logo">
-      <h1>OLSLEARN</h1>
-    </div>
-    <div class="sub-menu">
-      <ul>
-        <li>Home</li>
-        <li>Services</li>
-        <li><a href="dashboard.html">Dashboard</a>
-        </li>
-        <li><a href="help.html">Help</a></li>
-        <li>
-          <div class="login">Login</div>
-        </li>
-      </ul>
-    </div>
-  </div>
-
-  <body>
-    <?php
-      include 'quiz.php';
-      ?>
-    <h1>Interactive Learning Tools Example</h1>
-    <!-- Simulation -->
-    <div class="simulation-container">
-      <!-- Put your simulation content here -->
-      <p>This is an example simulation. Click the button to start.</p>
-      <div class="button-container">
-        <button class="simulation-button">Start Simulation</button>
-      </div>
-    </div>
-
-    <!-- Virtual Lab -->
-    <h2>Virtual Lab</h2>
-    <p>Conduct the following experiment:</p>
-    <div class="virtual-lab">
-      <div class="lab-environment">
-        <div class="lab-controls">
-          <h2>Virtual Lab Controls</h2>
-          <button id="start-button" onclick="startExperiment()">Start Experiment</button>
-          <button id="stop-button" onclick="stopExperiment()">Stop Experiment</button>
-          <div id="experiment-results">
-            <p>No results yet.</p>
-          </div>
+<body onload="startFunction()">
+    <div class="menu">
+        <div class="logo">
+            <img src="assets/logo.jpg" alt="ols logo">
+            <h1>OLSLEARN</h1>
         </div>
-      </div>
-    </div>
-
-    <!-- Discussion Forum -->
-    <!-- Discussion forum section -->
-    <section class="discussion-forum">
-      <h2 class="section-heading">Discussion Forum</h2>
-
-      <!-- New post form -->
-      <form class="new-post-form">
-        <div class="form-group">
-          <label for="post-title">Post title:</label>
-          <input type="text" id="post-title" name="post-title" required>
-        </div>
-        <div class="form-group">
-          <label for="post-content">Post content:</label>
-          <textarea id="post-content" name="post-content" required></textarea>
-        </div>
-        <button type="submit" class="submit-button">Submit</button>
-      </form>
-
-      <!-- List of posts -->
-      <ul class="post-list">
-        <li>
-          <h3 class="post-title">Question about Module 2</h3>
-          <p class="post-content">Can someone help me understand the concept of inheritance in OOP?</p>
-          <div class="post-meta">
-            <span class="post-author">Posted by JohnDoe</span>
-            <span class="post-date">3 hours ago</span>
-          </div>
-          <ul class="reply-list">
-            <li>
-              <p class="reply-content">Inheritance allows a subclass to inherit the properties and methods of its parent
-                class. It's a fundamental concept in OOP and allows for code reusability and abstraction.</p>
-              <div class="reply-meta">
-                <span class="reply-author">Replied by JaneDoe</span>
-                <span class="reply-date">2 hours ago</span>
-              </div>
-            </li>
-          </ul>
-        </li>
-      </ul>
-    </section>
-    <!-- JavaScript code for the virtual lab -->
-    <script>
-      // define the experiment parameters
-      const experimentDuration = 120; // in seconds
-      const experimentResults = []; // store the results here
-
-      // get the HTML elements for the experiment controls and results
-      const startButton = document.getElementById('start-button');
-      const stopButton = document.getElementById('stop-button');
-      const resultsElement = document.getElementById('experiment-results');
-
-      // initialize the experiment variables
-      let experimentTimer;
-      let experimentRunning = false;
-
-      // function to start the experiment
-      function startExperiment() {
-        // don't start the experiment if it's already running
-        if (experimentRunning) {
-          return;
-        }
-
-        // set the experiment to running and update the controls
-        experimentRunning = true;
-        startButton.disabled = true;
-        stopButton.disabled = false;
-
-        // start the timer and update the results every second
-        let currentTime = 0;
-        experimentTimer = setInterval(() => {
-          currentTime++;
-          if (currentTime <= experimentDuration) {
-            // perform the experiment for one second and store the result
-            const experimentResult = performExperiment();
-            experimentResults.push(experimentResult);
-            updateResultsDisplay();
-          } else {
-            // stop the experiment and update the controls
-            stopExperiment();
-          }
-        }, 1000);
-      }
-
-      // function to stop the experiment
-      function stopExperiment() {
-        // don't stop the experiment if it's not running
-        if (!experimentRunning) {
-          return;
-        }
-
-        // set the experiment to not running and update the controls
-        experimentRunning = false;
-        startButton.disabled = false;
-        stopButton.disabled = true;
-
-        // stop the timer and display the final results
-        clearInterval(experimentTimer);
-        updateResultsDisplay();
-      }
-
-      // function to perform the experiment
-      function performExperiment() {
-        // perform the experiment and return the result
-        // this will depend on the specific virtual lab being used
-      }
-
-      // function to update the results display
-      function updateResultsDisplay() {
-        let resultsHTML = '<h3>Experiment Results:</h3>';
-        if (experimentResults.length > 0) {
-          resultsHTML += '<ul>';
-          for (let i = 0; i < experimentResults.length; i++) {
-            resultsHTML += '<li>' + experimentResults[i] + '</li>';
-          }
-          resultsHTML += '</ul>';
-        } else {
-          resultsHTML += '<p>No results yet.</p>';
-        }
-        resultsElement.innerHTML = resultsHTML;
-      }
-    </script>
-    <script src="score.js"></script>
-    <script src="discussion.js"></script>
-    <script src="simulation.js"></script>
-
-    <div class="footer">
-      <div class="row">
-        <div class="column">
-          <div class="one">
-            <h3>About Us</h3>
-            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit.
-              Molestias nam <br><br>ipsam cumque! Omnis quos nemo impedit dolor <br><br> ducimus suscipit soluta.</p>
-          </div>
-        </div>
-        <div class="column">
-          <div class="two">
-            <h3>Company</h3>
+        <div class="sub-menu">
             <ul>
-              <li>Home</li>
-              <li>Courses</li>
-              <li>ORILEARN Academy</li>
-              <li>Offers</li>
+                <li><a href="index.html">Home</a></li>
+                <li>Services</li>
+                <li><a href="dashboard.html">Dashboard</a>
+                </li>
+                <li><a href="help.html">Help</a></li>
+                <li>
+                 <div class="login">Login</div>
+                </li>
             </ul>
-          </div>
         </div>
-        <div class="column">
-          <div class="three">
-            <h3>Follow Us</h3>
-            <ul>
-              <li>Instagram</li>
-              <li>Twitter</li>
-              <li>LinkedIn</li>
-              <li>Facebook</li>
-              <li>Github</li>
-            </ul>
-          </div>
-
+    </div>
+    </div>
+    <div class="section1">
+        <div class="top">
+            <h2>Learn better with support all the way</h2>          
         </div>
-        <div class="column">
-          <div class="four">
-            <h3>Contact us</h3>
-            <div class="input">
-              Send us a message
-              <form action="">
-                <textarea id="message" cols="20" rows="4" placeholder="Write Something"></textarea>
-                <input id="submit" type="submit" value="Send">
-              </form>
-
-            </div>
-          </div>
-        </div>
-        <section>
-          <div class="chatbot">
-            <div class="container">
-              <div class="chatbox">
-                <div class="chatbox__support">
-                  <div class="chatbox__header">
-                    <div class="chatbox__image--header">
-                      <img src="./assets/chatbot.jpg" alt="" />
-                    </div>
-                    <div class="chatbox__content--header">
-                      <h4 class="chatbox__heading--header">Chat-support</h4>
-                      <p class="chatbox__description--header">
-                        Hi. I am osl bot. How can I help you?
-                      </p>
-                    </div>
-                  </div>
-                  <div class="chatbox__messages">
-                    <div></div>
-                  </div>
-                  <div class="chatbox__footer" class="sendBar">
-                    <input type="text"  id="inputMSG" onkeypress="isEnter(event)" type="text" placeholder="Type a message" autofocus/>
-                    <button class="chatbox__send--footer send__button">
-                      <img src="./assets/send.svg" alt="" />
-                    </button>
-                  </div>
+        <div class="bott">
+            <div class="one">
+                <div class="icon">
+                    <img src="assets/time.png" alt="">
                 </div>
-                <section>
-                  <div class="chatbot">
-                    <div class="container">
-                      <div class="chatbox">
-                        <div class="chatbox__support">
-                          <div class="chatbox__header">
-                            <div class="chatbox__image--header">
-                              <img src="./assets/chatbot.jpg" alt="" />
-                            </div>
-                            <div class="chatbox__content--header">
-                              <h4 class="chatbox__heading--header">Chat-support</h4>
-                              <p class="chatbox__description--header">
-                                Hi. I am osl bot. How can I help you?
-                              </p>
-                            </div>
+                <div class="h3">24/7 help</div>
+                <p>Our network of 5000+ mentors are always there to keep you on track</p>
+            </div>
+            <div class="two">
+                <div class="icon">
+                    <img src="assets/fast.png" alt="">
+                </div>
+                <div class="h3">Quick Response</div>
+                <p>Our support are always there to answer your questions in the shortest time possible</p>
+            </div>
+            <div class="three">
+                <div class="icon">
+                    <img src="assets/vet.png" alt="">
+                </div>
+                <div class="h3">Highly vetted mentors</div>
+                <p>Our mentors have been highly vetted upto 5 times to ensure we provide quality service</p>
+            </div>
+            <div class="four">
+                <div class="icon">
+                    <img src="assets/quality.png" alt="">
+                </div>
+                <div class="h3">High quality studies</div>
+                <p>With the level of services we provide, we ensure the quality of our work is of the best.</p>
+            </div>
+        </div>
+    </div>
+    <div class="section1">
+      <div class="services">
+        <div class="search-container">
+          <form action="/search">
+            <input type="text" placeholder="Search for services...">
+            <button type="submit"><i class="fa fa-search"></i></button>
+          </form>
+        </div>
+      
+        <div class="services-container">
+          <div class="service">
+            <img src="assets/service1.jpg" alt="Service 1">
+            <h3>Online Courses</h3>
+            <p>Our platform offers a wide range of online courses, from computer programming to foreign languages.</p>
+            <a href="online.html">Learn More</a>
+          </div>
+      
+          <div class="service">
+            <img src="assets/service2.jpg" alt="Service 2">
+            <h3>Live Classes</h3>
+            <p>Join live classes with our expert instructors and interact with other students in real-time.</p>
+            <a href="#">Learn More</a>
+          </div>
+      
+          <div class="service">
+            <img src="assets/service3.jpg" alt="Service 3">
+            <h3>Certification Programs</h3>
+            <p>Earn a certificate upon completing one of our certification programs and showcase your skills to employers.</p>
+            <a href="#">Learn More</a>
+          </div>
+      
+          <div class="service">
+            <img src="assets/service4.jpg" alt="Service 4">
+            <h3>Personalized Learning</h3>
+            <p>Our platform uses data-driven insights to personalize your learning experience and help you achieve your goals faster.</p>
+            <a href="#">Learn More</a>
+          </div>
+        </div>
+      </div>
+    </div>
+      
+    <div class="footer">
+        <div class="row">
+            <div class="column">
+               <div class="one">
+                <h3>About Us</h3>
+                <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. 
+                    Molestias nam <br><br>ipsam cumque! Omnis quos nemo impedit dolor <br><br> ducimus suscipit soluta.</p>
+               </div>
+            </div>
+            <div class="column">
+                <div class="two">
+                    <h3>Company</h3>
+                <ul>
+                    <li>Home</li>
+                    <li>Courses</li>
+                    <li>ORILEARN Academy</li>
+                    <li>Offers</li>
+                </ul>
+                </div>
+            </div>
+            <div class="column">
+                <div class="three">
+                    <h3>Follow Us</h3>
+                    <ul>
+                        <li>Instagram</li>
+                        <li>Twitter</li>
+                        <li>LinkedIn</li>
+                        <li>Facebook</li>
+                        <li>Github</li>
+                    </ul>
+                </div>
+                
+                </div>
+            <div class="column">
+                <div class="four">
+                    <h3>Contact us</h3>
+                    <div class="input">
+                        Send us a message
+                        <form action="">
+                        <textarea id="message" cols="20" rows="4" placeholder="Write Something"></textarea>
+                        <input id="submit" type="submit" value="Send">
+                        </form>
+                       
+                    </div>
+                </div>
+            </div>
+            <section>
+                <div class="chatbot">
+                  <div class="container">
+                    <div class="chatbox">
+                      <div class="chatbox__support">
+                        <div class="chatbox__header">
+                          <div class="chatbox__image--header">
+                            <img src="./assets/chatbot.jpg" alt="" />
                           </div>
-                          <div class="chatbox__messages">
-                            <div></div>
-                          </div>
-                          <div class="chatbox__footer" class="sendBar">
-                            <input type="text"  id="inputMSG" onkeypress="isEnter(event)" type="text" placeholder="Type a message" autofocus/>
-                            <button class="chatbox__send--footer send__button">
-                              <img src="./assets/send.svg" alt="" />
-                            </button>
+                          <div class="chatbox__content--header">
+                            <h4 class="chatbox__heading--header">Chat-support</h4>
+                            <p class="chatbox__description--header">
+                              Hi. I am osl bot. How can I help you?
+                            </p>
                           </div>
                         </div>
-                        <div class="chatbox__button">
-                          <button>
-                            <h4>chat with us</h4>
-                            <img src="./assets/chatbox-icon.svg" />
+                        <div class="chatbox__messages">
+                          <div></div>
+                        </div>
+                        <div class="chatbox__footer" class="sendBar">
+                          <input type="text"  id="inputMSG" onkeypress="isEnter(event)" type="text" placeholder="Type a message" autofocus/>
+                          <button class="chatbox__send--footer send__button">
+                            <img src="./assets/send.svg" alt="" />
                           </button>
                         </div>
                       </div>
+                      <div class="chatbox__button">
+                        <button>
+                          <h4>chat with us</h4>
+                          <img src="./assets/chatbox-icon.svg" />
+                        </button>
+                      </div>
                     </div>
                   </div>
-                </section>
-            </div>
+                </div>
+              </section>
           </div>
-      </div>
-      <script src="./js/app.js"></script>
-  </body>
-  </html>
+        </div>
+    </div>
+    <script src="./js/app.js"></script>
+</body>
+</html>

@@ -168,6 +168,7 @@ border-bottom: 2px solid #2d545e;
 .section1{
     width: 95%;
     margin: auto;
+    overflow-y: auto;
     margin-top: 20px;
     height: 100vh;
     background: #fff;
@@ -2049,4 +2050,141 @@ input[type="submit"]:hover {
   }
 
  
+  
+  .help-container {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 50px;
+  }
+  
+  .search-container {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+  }
+  
+  .search-container form {
+    display: flex;
+    align-items: center;
+    width: 100%;
+  }
+  
+  .search-container input[type="text"] {
+    border: 1px solid #ccc;
+    flex-grow: 1;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    outline: none;
+  }
+  
+  .search-container .search-icon {
+    margin-left: -30px;
+    margin-right: 10px;
+    color: #000;
+    cursor: pointer;
+  }
+  
+  .search-container .search-icon:hover {
+    color: #000;
+  }
+  
+    .search-container .search-icon:active {
+        color: #000;
+    }
+
+  .search-container button[type="submit"]:hover {
+    background-color: #005ea6;
+  }
+  
+  input[type="text"] {
+    width: 60%;
+    padding: 12px 20px;
+    margin-right: 10px;
+    box-sizing: border-box;
+    border: 2px solid #ccc;
+    border-radius: 4px;
+    font-size: 16px;
+    background-color: white;
+  }
+  
+  button[type="submit"] {
+    background-color: #081430;
+    color: white;
+    padding: 15px 25px;
+    border: 1px solid #3449;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  
+  button[type="submit"]:hover {
+    background-color: #45a049;
+  }
+  
+  .search-container form button[type="submit"] {
+    margin-left: -4px;
+  }
+  
+  .help {
+    background-color: #f2f2f2;
+    padding: 20px;
+    border-radius: 5px;
+  }
+  
+  .top {
+    display: flex;
+    justify-content: space-between;
+  }
+  
+  h1 {
+    font-size: 36px;
+    margin-bottom: 20px;
+  }
+  
+  h2 {
+    font-size: 24px;
+    margin-top: 40px;
+    margin-bottom: 20px;
+  }
+  
+  ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+  
+  li {
+    margin-bottom: 20px;
+  }
+  
+  summary {
+    cursor: pointer;
+    font-size: 20px;
+  }
+  
+  details > * {
+    margin-left: 20px;
+  }
+  
+  label {
+    display: block;
+    margin-bottom: 10px;
+    font-size: 20px;
+  }
+  
+  input[type="text"],
+  input[type="email"],
+  textarea {
+    width: 100%;
+    padding: 12px 20px;
+    margin-bottom: 20px;
+    box-sizing: border-box;
+    border: 2px solid #ccc;
+    border-radius: 4px;
+    font-size: 16px;
+    background-color: white;
+    resize: none;
+  }
+  
   
