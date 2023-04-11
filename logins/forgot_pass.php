@@ -24,7 +24,13 @@
                 <input type="submit" value="Submit">
             </div>
             <div class="extras">
+<<<<<<< HEAD:logins/forgot_pass.php
                 <a href="login.php">Go back</a>
+=======
+                <a href="forgot_pass.html">Forgot password?</a> <br>
+                Don't have an account?
+                <a href="sign_up.html">Sign up here</a>
+>>>>>>> 09cfee4211127a654902ed892aa578d5a375b02a:logins/login.html
             </div>
         </form>
     </div>

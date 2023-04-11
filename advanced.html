@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>project</title>
+</head>
+<body>
+    <!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="assets/logo.jpg" type="image/icon type">
+    <title>E-learning platform</title>
+    <link rel="stylesheet" type="text/css"  href="style.css">
+    <link rel="stylesheet" href="projects/pr_styles.css">
+    <style>
+      /* main */
+main {
+display: flex;
+justify-content: center;
+align-items: center;
+height: 100vh;
+background-color: #f2f2f2;
+overflow-y: auto;
+}
+
+/* article */
+article {
+max-width: 800px;
+margin: 10px;
+padding: 20px;
+border-radius: 10px;
+background-color: #ffffff;
+box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+text-align: center;
+}
+
+/* title */
+.title {
+font-size: 2rem;
+margin-bottom: 10px;
+color: #333333;
+}
+
+/* subtitle */
+.subtitle {
+font-size: 1.5rem;
+margin-bottom: 10px;
+color: #666666;
+}
+
+/* description */
+.description {
+font-size: 1.2rem;
+line-height: 1.5;
+margin-bottom: 20px;
+color: #666666;
+}
+
+/* list */
+.list {
+font-size: 1.2rem;
+text-align: left;
+margin-bottom: 20px;
+color: #666666;
+}
+
+.list li {
+margin-bottom: 10px;
+}
+
+/* progress-tracker */
+.progress-tracker {
+margin-bottom: 20px;
+}
+
+.progress {
+width: 100%;
+height: 20px;
+margin-bottom: 10px;
+background-color: #EAEAEA;
+border-radius: 10px;
+position: relative;
+overflow: hidden;
+}
+
+.progress-bar {
+height: 100%;
+background-color: #2196F3;
+border-radius: 10px;
+position: absolute;
+top: 0;
+left: 0;
+text-align: center;
+line-height: 20px;
+color: #FFF;
+font-size: 0.9rem;
+transition: width 0.5s ease;
+}
+
+/* progress-text */
+.progress-text {
+font-size: 1.2rem;
+margin-bottom: 10px;
+color: #666666;
+}
+
+/* link */
+.link {
+color: #2196F3;
+text-decoration: none;
+}
+
+.link:hover {
+text-decoration: none;
+}
+
+/* button */
+.button {
+display: inline-block;
+padding: 10px 20px;
+background-color: #000;
+color: #ffffff;
+border-radius: 5px;
+border: none;
+font-size: 1.2rem;
+text-transform: uppercase;
+cursor: pointer;
+transition: background-color 0.5s ease;
+}
+
+.button:hover {
+background-color: #fff;
+}
+    </style>
+</head>
+<body>
+    <div class="menu" id="menu">
+        <div class="logo">
+            <img src="assets/logo.jpg" alt="ols logo">
+            <h1>OLSLEARN</h1>
+        </div>
+        <div class="sub-menu">
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="service.html">Services</a></li>
+                <li><a href="dashboard.html">Dashboard</a>
+                </li>
+                <li><a href="help.html">help</a></li>
+            </ul>
+        </div>
+    </div>
+    <div class="section1" id="section1">
+       <div id="left">
+        <div id="top">
+            <div id="logo">
+                <img src="assets/logo.jpg" alt="ols logo">
+            </div>
+            <div id="desc">
+                <h2>OLSLEARN</h2>
+                <h3>Dashboard</h3>
+            </div>
+        </div>
+        <div id="lower">
+            <div id="categories" >
+                <h3><a href="personal_details.html">Personnal Details</a></h3>
+        </div>
+            <div id="categories" >
+                <h3><a href="dashboard.html">Courses</a></h3>
+            </div>
+            <div id="categories">
+                <h3><a href="projects.html">Projects</a></h3>
+            </div>
+            <div id="categories" class="active">
+                <h3>Quizes & Cats</h3>
+            </div>
+            <div id="categories">
+                <h3><a href="assignment.html">Assignments</a></h3>
+            </div>
+            <div id="categories">
+                <h3><a href="grading.html">Grading</a></h3>
+            </div>
+        </div>
+       </div>
+       <div id="right">
+        <div class="top">
+            <div id="cate">
+                <p>Quizes and Cats</p>
+            </div>
+            <div id="user">
+                <div class="img">
+                    <img src="assets/oriel.jpg" alt="img">
+                </div>
+                <div class="details">
+                    <p>Oriel kiplangat</p>
+                </div>
+            </div>
+        </div>
+<!--WORKSPACE-->
+<main>
+  <article>
+    <h1 class="title">Module 3 -An introduction to javascript</h1>
+    <p class="description">Welcome to Module 1 of the JS course. In this module, you will learn the basics of JS and how to create a simple scripting pages.</p>
+
+    <h2 class="subtitle">Learning Objectives</h2>
+    <ul class="list">
+      <li>Understand the role of JS in web development</li>
+      <li>Create a basic JS document</li>
+      <li>Use common JS tags to structure content</li>
+    </ul>
+
+    <div class="progress-tracker">
+      <h2 class="subtitle">Progress Tracker</h2>
+      <div class="progress">
+        <div class="progress-bar" style="width: 20%">20%</div>
+      </div>
+      <p class="progress-text">You have completed 2 out of 10 tasks in this module.</p>
+    </div>
+
+    <h2 class="subtitle">Next Task</h2>
+    <p class="description">Complete the <a class="link" href="quiz.html">JS Quiz</a> to test your knowledge of JS basics.</p>
+
+    <button class="button"><a class="link" href="#">Next Module</a></button>
+  </article>
+</main>
+
+  
+
+<!--WORKSPACE-->
+       </div>
+    </div>
+
+    <div class="footer">
+        <div class="row">
+            <div class="column">
+               <div class="one">
+                <h3>About Us</h3>
+                <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. 
+                    Molestias nam <br><br>ipsam cumque! Omnis quos nemo impedit dolor <br><br> ducimus suscipit soluta.</p>
+               </div>
+            </div>
+            <div class="column">
+                <div class="two">
+                    <h3>Company</h3>
+                <ul>
+                    <li>Home</li>
+                    <li>Courses</li>
+                    <li>ORILEARN Academy</li>
+                    <li>Offers</li>
+                </ul>
+                </div>
+            </div>
+            <div class="column">
+                <div class="three">
+                    <h3>Follow Us</h3>
+                    <ul>
+                        <li>Instagram</li>
+                        <li>Twitter</li>
+                        <li>LinkedIn</li>
+                        <li>Facebook</li>
+                        <li>Github</li>
+                    </ul>
+                </div>
+                
+                </div>
+            <div class="column">
+                <div class="four">
+                    <h3>Contact us</h3>
+                    <div class="input">
+                        Send us a message
+                        <form action="">
+                        <textarea id="message" cols="20" rows="4" placeholder="Write Something"></textarea>
+                        <input id="submit" type="submit" value="Send">
+                        </form>
+                       
+                    </div>
+                </div>
+            </div>
+            <section>
+                <div class="chatbot">
+                  <div class="container">
+                    <div class="chatbox">
+                      <div class="chatbox__support">
+                        <div class="chatbox__header">
+                          <div class="chatbox__image--header">
+                            <img src="./assets/chatbot.jpg" alt="" />
+                          </div>
+                          <div class="chatbox__content--header">
+                            <h4 class="chatbox__heading--header">Chat-support</h4>
+                            <p class="chatbox__description--header">
+                              Hi. I am osl bot. How can I help you?
+                            </p>
+                          </div>
+                        </div>
+                        <div class="chatbox__messages">
+                          <div></div>
+                        </div>
+                        <div class="chatbox__footer" class="sendBar">
+                          <input type="text"  id="inputMSG" onkeypress="isEnter(event)" type="text" placeholder="Type a message" autofocus/>
+                          <button class="chatbox__send--footer send__button">
+                            <img src="./assets/send.svg" alt="" />
+                          </button>
+                        </div>
+                      </div>
+                      <div class="chatbox__button">
+                        <button>
+                          <h4>chat with us</h4>
+                          <img src="./assets/chatbox-icon.svg" />
+                        </button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </section>
+          </div>
+        </div>
+    </div>
+    <script src="./js/app.js"></script>
+   
+</body>
+</html>

@@ -1,11 +1,11 @@
 # E-LEARNING-PLATFORM
 ### Contributors
 1. Oriel Kiplangat kiplangatoriel@gmail.com
-2. Lawrence Wafula 
+2. Lawrence Wafula warsamegift@gmail.com
 3. Steven Mwega Kamau
 
 ## Overview
-Welcome to the OLS Learning Platform! This platform is designed to provide learners with access to online learning resources and tools that will help them achieve their academic and professional goals. The platform is built using Html,Javascript, PHP and css to provide a seamless learning experience.
+Welcome to the OLS Learning Platform! This platform is designed to provide learners with access to online learning resources and tools that will help them achieve their academic and professional goals. The platform is built using Html,Javascript, PHP and css to provide a seamless learning experience.It is as of now still under development.
 
 This repository contains the source code for the OLS Learning Platform. The platform was developed by Oriel Kiplangat, Lawrence Wafula, and Stephen Mwega Kamau as part of a group project for their Information tecchnology course.
 

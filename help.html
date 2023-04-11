@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="logo.jpg" type="image/icon type">
+    <title>E-learning platform</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+
+<body onload="startFunction()">
+    <div class="menu">
+        <div class="logo">
+            <img src="assets/logo.jpg" alt="ols logo">
+            <h1>OLSLEARN</h1>
+        </div>
+        <div class="sub-menu">
+            <ul>
+                <li> <a href="index.html">Home</a></li>
+                <li><a href="service.html">Services</a></li>
+                <li><a href="dashboard.html">Dashboard</a>
+                </li>
+                <li>Help</li>
+                <li>
+                    <div class="login">Login</div>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <div class="help-container">
+        <div class="search-container">
+            <form action="/search">
+              <input type="text" placeholder="Search for help...">
+              <span class="search-icon"><i class="fa fa-search"></i></span>
+            </form>
+          </div>
+          
+        <div class="help">
+            <div class="top">
+                <main>
+                    <h1>Help Center</h1>
+                    <p>Welcome to the help center for our e-learning platform. Here you can find answers to common questions
+                        and get help with any issues you may be experiencing.</p>
+    
+                    <h2>FAQ</h2>
+                    <ul>
+                        <li>
+                            <details>
+                                <summary>
+                                    <h3>How do I enroll in a course?</h3>
+                                </summary>
+                                <p>To enroll in a course, go to the Courses page and browse the available courses. Click on
+                                    the course you want to enroll in and follow the prompts to complete the enrollment
+                                    process.</p>
+                            </details>
+                        </li>
+    
+                        <li>
+                            <details>
+                                <summary>
+                                    <h3>How do I reset my password?</h3>
+                                </summary>
+                                <p>To reset your password, go to the Settings page and click on the "Change Password"
+                                    button. Follow the prompts to reset your password.</p>
+                            </details>
+                        </li>
+    
+                        <li>
+                            <details>
+                                <summary>
+                                    <h3>How do I view my progress in a course?</h3>
+                                </summary>
+                                <p>To view your progress in a course, go to the My Progress page. Here you can see which lessons
+                                    you've completed and how well you've done on any quizzes or assessments.</p>
+                            </details>
+                        </li>
+                    </ul>
+    
+                    <h2>Contact Us</h2>
+                    <p>If you can't find the help you need in our FAQ, please feel free to contact us using the form below. We'll get back to you as soon as possible.</p>
+    
+                    <form>
+                        <label for="name">Name:</label>
+                        <input type="text" id="name" name="name" required>
+    
+                        <label for="email">Email:</label>
+                        <input type="email" id="email" name="email" required>
+    
+                        <label for="message">Message:</label>
+                        <textarea id="message" name="message" required></textarea>
+    
+                        <button type="submit">Send</button>
+                    </form>
+                </main>
+            </div>
+        </div>
+    </div>
+      
+      <script>
+        const form = document.querySelector('#contact-form');
+        const feedback = document.querySelector('#feedback');
+      
+        form.addEventListener('submit', (e) => {
+          e.preventDefault();
+      
+          // simulate sending data to the server
+          setTimeout(() => {
+            feedback.innerHTML = '<p>Your message has been sent!</p>';
+            form.reset();
+          }, 1000);
+        });
+      </script>
+      
+    
+    <div class="footer">
+            <div class="row">
+                <div class="column">
+                    <div class="one">
+                        <h3>About Us</h3>
+                        <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit.
+                            Molestias nam <br><br>ipsam cumque! Omnis quos nemo impedit dolor <br><br> ducimus suscipit
+                            soluta.</p>
+                    </div>
+                </div>
+                <div class="column">
+                    <div class="two">
+                        <h3>Company</h3>
+                        <ul>
+                            <li>Home</li>
+                            <li>Courses</li>
+                            <li>ORILEARN Academy</li>
+                            <li>Offers</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="column">
+                    <div class="three">
+                        <h3>Follow Us</h3>
+                        <ul>
+                            <li>Instagram</li>
+                            <li>Twitter</li>
+                            <li>LinkedIn</li>
+                            <li>Facebook</li>
+                            <li>Github</li>
+                        </ul>
+                    </div>
+
+                </div>
+                <div class="column">
+                    <div class="four">
+                        <h3>Contact us</h3>
+                        <div class="input">
+                            Send us a message
+                            <form action="">
+                                <textarea id="message" cols="20" rows="4" placeholder="Write Something"></textarea>
+                                <input id="submit" type="submit" value="Send">
+                            </form>
+
+                        </div>
+                    </div>
+                </div>
+                <section>
+                    <div class="chatbot">
+                        <div class="container">
+                            <div class="chatbox">
+                                <div class="chatbox__support">
+                                    <div class="chatbox__header">
+                                        <div class="chatbox__image--header">
+                                            <img src="./assets/chatbot.jpg" alt="" />
+                                        </div>
+                                        <div class="chatbox__content--header">
+                                            <h4 class="chatbox__heading--header">Chat-support</h4>
+                                            <p class="chatbox__description--header">
+                                                Hi. I am osl bot. How can I help you?
+                                            </p>
+                                        </div>
+                                    </div>
+                                    <div class="chatbox__messages">
+                                        <div></div>
+                                    </div>
+                                    <div class="chatbox__footer" class="sendBar">
+                                        <input type="text" id="inputMSG" onkeypress="isEnter(event)" type="text"
+                                            placeholder="Type a message" autofocus />
+                                        <button class="chatbox__send--footer send__button">
+                                            <img src="./assets/send.svg" alt="" />
+                                        </button>
+                                    </div>
+                                </div>
+                                <div class="chatbox__button">
+                                    <button>
+                                        <h4>chat with us</h4>
+                                        <img src="./assets/chatbox-icon.svg" />
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </div>
+        </div>
+    </div>
+    <script src="./js/app.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="logo.jpg" type="image/icon type">
+    <title>E-learning platform</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <style>
+       /* global styles */
+
+/* header styles */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    background-color: #333;
+    color: #fff;
+}
+
+nav {
+    display: flex;
+}
+
+nav a {
+    color: #fff;
+    text-decoration: none;
+    margin-right: 20px;
+}
+
+nav a:hover {
+    text-decoration: underline;
+}
+
+.hero {
+    position: relative;
+    height: 5px;
+    overflow: hidden;
+}
+
+.hero-image {
+    height: 100%;
+    background-image: url('path/to/image.jpg');
+    background-size: cover;
+    background-position: center;
+    opacity: 0.8;
+}
+
+.hero-text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    color: #fff;
+}
+
+.hero-text h1 {
+    font-size: 60px;
+    margin-bottom: 20px;
+}
+
+.hero-text p {
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+
+.cta-button {
+    display: inline-block;
+    background-color: #fff;
+    color: #333;
+    padding: 10px 20px;
+    font-size: 18px;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: all 0.2s ease-in-out;
+}
+
+.cta-button:hover {
+    background-color: #333;
+    color: #fff;
+}
+
+/* main styles */
+main {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 40px;
+}
+
+section {
+    margin-bottom: 40px;
+}
+
+section h2 {
+    font-size: 36px;
+    margin-bottom: 20px;
+}
+
+section p {
+    font-size: 18px;
+    margin-bottom: 20px;
+}
+
+ul, ol {
+    margin-bottom: 20px;
+}
+
+ul li, ol li {
+    font-size: 18px;
+    margin-bottom: 10px;
+}
+
+.cta-button {
+    display: inline-block;
+    background-color: #333;
+    color: #fff;
+    padding: 10px 20px;
+    font-size: 18px;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: all 0.2s ease-in-out;
+}
+
+.cta-button:hover {
+    background-color: #fff;
+    color: #333;
+}
+
+    </style>
+</head>
+
+<body onload="startFunction()">
+    <div class="menu">
+        <div class="logo">
+            <img src="assets/logo.jpg" alt="ols logo">
+            <h1>OLSLEARN</h1>
+        </div>
+        <div class="sub-menu">
+            <ul>
+                <li>Home</li>
+                <li><a href="service.html">Services</a></li>
+                <li><a href="dashboard.html">Dashboard</a>
+                </li>
+                <li><a href="help.html">Help</a></li>
+                <li>
+                    <div class="login">Login</div>
+                </li>
+            </ul>
+        </div>
+    </div>
+    </div>
+    <div class="section1">
+        <div class="top">
+            <h2>Learn better with support all the way</h2>
+        </div>
+        <div class="bott">
+            <div class="one">
+                <div class="icon">
+                    <img src="assets/time.png" alt="">
+                </div>
+                <div class="h3">24/7 help</div>
+                <p>Our network of 5000+ mentors are always there to keep you on track</p>
+            </div>
+            <div class="two">
+                <div class="icon">
+                    <img src="assets/fast.png" alt="">
+                </div>
+                <div class="h3">Quick Response</div>
+                <p>Our support are always there to answer your questions in the shortest time possible</p>
+            </div>
+            <div class="three">
+                <div class="icon">
+                    <img src="assets/vet.png" alt="">
+                </div>
+                <div class="h3">Highly vetted mentors</div>
+                <p>Our mentors have been highly vetted upto 5 times to ensure we provide quality service</p>
+            </div>
+            <div class="four">
+                <div class="icon">
+                    <img src="assets/quality.png" alt="">
+                </div>
+                <div class="h3">High quality studies</div>
+                <p>With the level of services we provide, we ensure the quality of our work is of the best.</p>
+            </div>
+        </div>
+    </div>
+    <div class="section1">
+        <div class="hero">
+            <div class="hero-image">
+                <div class="hero-text">
+                    <h1>Online Classes</h1>
+                    <p>Learn from the comfort of your own home with our online courses</p>
+                    <a href="#" class="cta-button">View Courses</a>
+                </div>
+            </div>
+        </div>
+        <main>
+            <section>
+                <h2>Why Choose Our Online Classes?</h2>
+                <p>Our online classes offer many benefits:</p>
+                <ul>
+                    <li>Flexibility to learn at your own pace and on your own schedule</li>
+                    <li>Access to quality instruction from anywhere in the world</li>
+                    <li>Interactive learning materials and activities</li>
+                    <li>Opportunities to connect with instructors and other students</li>
+                </ul>
+            </section>
+            <section>
+                <h2>Our Online Courses</h2>
+                <p>We offer a variety of online courses to meet your needs:</p>
+                <ul>
+                    <li>Introduction to Programming</li>
+                    <li>Web Development</li>
+                    <li>Data Science</li>
+                    <li>Artificial Intelligence</li>
+                </ul>
+                <a href="view_courses.html" class="cta-button">View All Courses</a>
+            </section>
+            <section>
+                <h2>How It Works</h2>
+                <p>Getting started with our online classes is easy:</p>
+                <ol>
+                    <li>Choose the course you want to take</li>
+                    <li>Register for the course and pay the enrollment fee</li>
+                    <li>Access the course materials and begin learning</li>
+                </ol>
+                <p>It's that simple!</p>
+            </section>
+        </main>
+    </div>
+
+    <div class="footer">
+        <div class="row">
+            <div class="column">
+                <div class="one">
+                    <h3>About Us</h3>
+                    <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit.
+                        Molestias nam <br><br>ipsam cumque! Omnis quos nemo impedit dolor <br><br> ducimus suscipit
+                        soluta.</p>
+                </div>
+            </div>
+            <div class="column">
+                <div class="two">
+                    <h3>Company</h3>
+                    <ul>
+                        <li>Home</li>
+                        <li>Courses</li>
+                        <li>ORILEARN Academy</li>
+                        <li>Offers</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="column">
+                <div class="three">
+                    <h3>Follow Us</h3>
+                    <ul>
+                        <li>Instagram</li>
+                        <li>Twitter</li>
+                        <li>LinkedIn</li>
+                        <li>Facebook</li>
+                        <li>Github</li>
+                    </ul>
+                </div>
+
+            </div>
+            <div class="column">
+                <div class="four">
+                    <h3>Contact us</h3>
+                    <div class="input">
+                        Send us a message
+                        <form action="">
+                            <textarea id="message" cols="20" rows="4" placeholder="Write Something"></textarea>
+                            <input id="submit" type="submit" value="Send">
+                        </form>
+
+                    </div>
+                </div>
+            </div>
+            <section>
+                <div class="chatbot">
+                    <div class="container">
+                        <div class="chatbox">
+                            <div class="chatbox__support">
+                                <div class="chatbox__header">
+                                    <div class="chatbox__image--header">
+                                        <img src="./assets/chatbot.jpg" alt="" />
+                                    </div>
+                                    <div class="chatbox__content--header">
+                                        <h4 class="chatbox__heading--header">Chat-support</h4>
+                                        <p class="chatbox__description--header">
+                                            Hi. I am osl bot. How can I help you?
+                                        </p>
+                                    </div>
+                                </div>
+                                <div class="chatbox__messages">
+                                    <div></div>
+                                </div>
+                                <div class="chatbox__footer" class="sendBar">
+                                    <input type="text" id="inputMSG" onkeypress="isEnter(event)" type="text"
+                                        placeholder="Type a message" autofocus />
+                                    <button class="chatbox__send--footer send__button">
+                                        <img src="./assets/send.svg" alt="" />
+                                    </button>
+                                </div>
+                            </div>
+                            <div class="chatbox__button">
+                                <button>
+                                    <h4>chat with us</h4>
+                                    <img src="./assets/chatbox-icon.svg" />
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </div>
+    </div>
+    <script src="./js/app.js"></script>
+</body>
+
+</html>
