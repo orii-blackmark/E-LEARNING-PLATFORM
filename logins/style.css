@@ -4,15 +4,19 @@
     font-family: 'poppins', sans-serif;
 }
 .menu{
-    background: #f7f7f7;
+
+    color:#fff;
+    
 }
 
 .container{
-    background: #fff;
     width: 400px;
     margin: auto;
+    background-color: #3449;
+    backdrop-filter: blur(10px);
     min-height: 60vh;
     position: relative;
+    color: #fff;
     margin-top: 40px;
     padding: 10px;
     border-radius: 20px;
@@ -93,8 +97,9 @@ form .extras{
 form .extras a{
     text-decoration: none;
     font-size: 17px;
-    color: rgb(38, 38, 102);
+    border: none;
+    color: rgb(142, 142, 173);
 }
 form .extras a:hover{
-    color: blue;
+    color: rgb(71, 71, 133);
 }

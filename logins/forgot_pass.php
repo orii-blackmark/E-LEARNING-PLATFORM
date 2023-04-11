@@ -24,7 +24,7 @@
                 <input type="submit" value="Submit">
             </div>
             <div class="extras">
-                <a href="login.html">Go back</a>
+                <a href="login.php">Go back</a>
             </div>
         </form>
     </div>

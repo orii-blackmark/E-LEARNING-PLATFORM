@@ -8,6 +8,62 @@
   <link rel="icon" href="logo.jpg" type="image/icon type">
   <title>E-learning platform</title>
   <link rel="stylesheet" type="text/css" href="style.css">
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+    }
+
+    .services {
+      padding: 40px;
+      text-align: center;
+    }
+
+    .services h2 {
+      font-size: 36px;
+      font-weight: bold;
+      margin-bottom: 20px;
+    }
+
+    .services p {
+      font-size: 18px;
+      line-height: 1.5;
+      margin-bottom: 40px;
+    }
+
+    .services ul {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+    }
+
+    .services li {
+      font-size: 24px;
+      margin-bottom: 20px;
+    }
+
+    .services li:before {
+      content: "✓ ";
+      color: green;
+      margin-right: 10px;
+    }
+    .services li a{
+      text-decoration: none;
+      border: none;
+
+    }
+
+    .services a {
+      color: #333;
+      text-decoration: none;
+    }
+
+    .services a:hover {
+      color: gray;
+      font-size: 25px;
+    }
+  </style>
 
 </head>
 
@@ -19,15 +75,28 @@
     </div>
     <div class="sub-menu">
         <ul>
-            <li><a href="index.html">Home</a></li>
-            <li><a href="#">Services</a></li>
-            <li><a href="dashboard.html">Dashboard</a></li>
-            <li><a href="help.html">Help</a></li>
-            <li><div class="login"><a href="logins/login.html">Login</a></div></li>
+            <li><a href="index.php">Home</a></li>
+            <li><a class="active" href="#">Services</a></li>
+            <li><a href="dashboard.php">Dashboard</a></li>
+            <li><a href="help.php">Help</a></li>
+            <li><div class="login"><a href="/logins/login.php">Login</a></div></li>
         </ul>
     </div>
-</div>
-
+  </div>
+  <div class="services">
+    <h2>Our Services</h2>
+    <p>We offer a wide range of online courses and resources to help you learn and grow.</p>
+    <ul>
+      <li><a href="#">Programming languages</a></li>
+      <li><a href="#">Web development</a></li>
+      <li><a href="#">Data science</a></li>
+      <li><a href="#">Design</a></li>
+      <li><a href="#">Business</a></li>
+      <li><a href="#">Marketing</a></li>
+    </ul>
+  </div>
+  <body>
+ 
     <div class="footer">
       <div class="row">
         <div class="column">

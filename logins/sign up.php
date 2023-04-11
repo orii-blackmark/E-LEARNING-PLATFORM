@@ -1,11 +1,45 @@
-<?php
-include 'config.php';
-?>
+
 <?php 
   session_start();
-  if(isset($_SESSION['id'])){
-    header("location: /index.php");
-  }
+
+  include("config.php");
+
+  if ($_SERVER['REQUEST_METHOD'] == "POST") {
+        $fname=$_POST['fname'];
+        $lname=$_POST['lname'];
+        $email=$_POST['email'];
+        $pnumber=$_POST['pnumber'];
+        $password=md5($_POST['password']);
+        $cpassword=md5($_POST['cpassword']);
+        $ran_id = rand(time(), 100000000);
+
+        if ($password == $cpassword) {
+            $sql = "INSERT INTO users(unique_id,fname,lname,email,pnumber,password) VALUES('$ran_id','$fname','$lname','$email','$pnumber','$password')";
+            mysqli_query($con,$sql); 
+            if ($sql) {
+                $select_sql2 = mysqli_query($con, "SELECT * FROM users WHERE email = '$email'");
+                if(mysqli_num_rows($select_sql2) > 0){
+                    $result = mysqli_fetch_assoc($select_sql2);
+                    $_SESSION['unique_id'] = $result['unique_id'];
+                    echo "success";
+            }else{
+                echo "This email address does not Exist!";
+            }
+            }
+            echo "<script>
+            alert('User registration completed.');
+            </script>
+            "; 
+            header("location: login.php");
+            die;
+            }else{
+            "<script>
+            alert('There was an error when trying to create an account');
+            </script>
+            ";
+            }
+    }
+      
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -23,25 +57,25 @@ include 'config.php';
 </head>
 <body>
     <video autoplay muted loop id="bg-video">
-        <source src="/assets/backgrounds.mp4" type="video/mp4">
+        <source src="../assets/backgrounds.mp4" type="video/mp4">
       </video>
     <div class="menu">
         <div class="logo">
-            <img src="/assets/logo.jpg" alt="ols logo">
+            <img src="../assets/logo.jpg" alt="ols logo">
             <h1>OLSLEARN</h1>
         </div>
         <div class="sub-menu">
             <ul>
-                <li><a href="/index.html">Home</a></li>
-                <li><a href="/service.html">Services</a></li>
-                <li><a href="/dashboard.html">Dashboard</a></li>
-                <li><a href="/help.html">Help</a></li>
-                <li><div class="login"><a href="login.html">Login</a></div></li>
+                <li><a href="/index.php">Home</a></li>
+                <li><a href="/service.php">Services</a></li>
+                <li><a href="/dashboard.php">Dashboard</a></li>
+                <li><a href="/help.php">Help</a></li>
+                <li><div class="login"><a href="login.php">Login</a></div></li>
             </ul>
         </div>
     </div>
     <div class="container">
-        <form action="" name="form3" onsubmit="validateSignup()">
+        <form action="" method="POST" name="form3" onsubmit="validateSignup()">
             <h3>Create an account</h3>
             <div class="inputs names">
                 <div class="name">
@@ -75,7 +109,7 @@ include 'config.php';
             </div>
             <div class="extras">
                 Already have an account?
-                <a href="login.html">Login here</a>
+                <a href="login.php">Login here</a>
             </div>
         </form>
     </div>
